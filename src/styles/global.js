@@ -12,6 +12,13 @@ export default createGlobalStyle`
         color: ${({theme}) => theme.COLORS.LIGHT_100};
     }
 
+    body, button, input, textarea, a {
+        font-family: "Poppins", sans-serif;
+        color: ${({theme}) => theme.COLORS.LIGHT_100};
+        font-size: 16px;
+        text-decoration: none;
+    }
+
     button, a {
         cursor: pointer;
         transition: filter .5s;
