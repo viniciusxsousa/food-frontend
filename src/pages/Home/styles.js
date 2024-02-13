@@ -2,23 +2,25 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
     width: 100%;
-    height: 100vw;
+    height: 100vh;
 
-    grid-template-rows: 114px auto 75px;
+    display: grid;
+    grid-template-rows: 114px auto;
     grid-template-areas: 
     'header'
-    'content'
-    'footer';
+    'content';
 `
 
 export const Content = styled.div`
     grid-area: content;
 
-    height: 100%;
+    padding-top: 44px;
+
+    overflow-y: scroll;
 `
 
 export const Flavors = styled.div`
-    margin: 44px 16px 0 20px;
+    margin: 0px 16px 0 20px;
 
     background: linear-gradient(180deg, rgba(9,30,38,1) 15%, rgba(0,19,28,1) 76%);
 

@@ -23,11 +23,11 @@ export function Home() {
                         <CardDished/>
                     </Section>
 
+                    <Footer/>
+
                 </div>
 
             </Content>
-
-            {/* <Footer/> */}
         </Container>
     )
 }

@@ -4,8 +4,6 @@ export const Container = styled.footer`
     background-color: ${({theme}) => theme.COLORS.DARK_600};
     padding: 29px 20px;
 
-    grid-area: footer;
-
     display: flex;
     align-items: center;
     gap: 6px;
