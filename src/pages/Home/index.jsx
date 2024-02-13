@@ -1,12 +1,18 @@
 import { Header } from "../../components/Header"
 import { Footer } from "../../components/Footer"
 
+import { Container, Content } from "./styles"
+
 export function Home() {
     return (
-        <>
+        <Container>
             <Header/>
-            <h2>espaço</h2>
+
+            <Content>
+                
+            </Content>
+
             <Footer/>
-        </>
+        </Container>
     )
 }
