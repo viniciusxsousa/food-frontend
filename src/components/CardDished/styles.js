@@ -15,13 +15,10 @@ export const Container = styled.article`
     align-items: center;
     gap: 12px;
 
-    button {
-        border: none;
-        background-color: transparent;
-    }
-
     > button:first-child {
         align-self: flex-end;
+        border: none;
+        background-color: transparent;
 
         svg {
             font-size: 24px;

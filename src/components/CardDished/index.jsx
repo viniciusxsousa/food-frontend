@@ -3,6 +3,8 @@ import { Container, Price, Buttons } from "./styles";
 import { FaRegHeart } from "react-icons/fa";
 import { IoIosRemove, IoIosAdd } from "react-icons/io";
 
+import { Button } from "../Button";
+
 import mask from '../../assets/mask.png'
 
 export function CardDished() {
@@ -24,7 +26,7 @@ export function CardDished() {
                 <IoIosAdd/>
             </Buttons>
 
-            <button>incluir</button>
+            <Button title="incluir"/>
 
         </Container>
     )
