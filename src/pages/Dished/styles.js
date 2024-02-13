@@ -57,3 +57,13 @@ export const Buttons = styled.div`
     font-size: 60px;
    }
 `
+
+export const Ingredients = styled.div`
+   display: flex;
+   justify-content: center;
+   gap: 10px;
+   flex-wrap: wrap;
+   
+
+   margin-bottom: 48px;
+`

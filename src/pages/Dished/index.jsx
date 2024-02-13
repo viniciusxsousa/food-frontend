@@ -1,5 +1,6 @@
-import { Container, Content, Buttons } from "./styles";
+import { Container, Content, Buttons, Ingredients } from "./styles";
 
+import { Ingredient} from '../../components/Ingredient'
 import { Header } from '../../components/Header'
 import { Button } from "../../components/Button";
 
@@ -23,6 +24,15 @@ export function Dished() {
                     <h2>Salada Ravanello</h2>
 
                     <p>Rabanetes, folhas verdes e molho agridoce salpicados com gergelim.</p>
+
+                    <Ingredients>
+                        <Ingredient title='alface'/>
+                        <Ingredient title='cebola'/>
+                        <Ingredient title='pão naan'/>
+                        <Ingredient title='pepino'/>
+                        <Ingredient title='rabanete'/>
+                        <Ingredient title='tomate'/>
+                    </Ingredients>
 
                     <Buttons>
                         <IoIosRemove/>
