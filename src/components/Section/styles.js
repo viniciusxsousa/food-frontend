@@ -9,4 +9,11 @@ export const Container = styled.div`
         font-weight: 500;
         margin-bottom: 18px;
     }
+
+    > div {
+        display: flex;
+        gap: 16px;
+        
+        overflow: hidden;
+    }
 `

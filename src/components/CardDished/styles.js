@@ -15,6 +15,8 @@ export const Container = styled.article`
     align-items: center;
     gap: 12px;
 
+    flex-shrink: 0;
+
     > button:first-child {
         align-self: flex-end;
         border: none;

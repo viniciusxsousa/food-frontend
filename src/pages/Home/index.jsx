@@ -23,6 +23,18 @@ export function Home() {
                         <CardDished/>
                     </Section>
 
+                    <Section title="Refeição">
+                        <CardDished/>
+                        <CardDished/>
+                        <CardDished/>
+                    </Section>
+
+                    <Section title="Refeição">
+                        <CardDished/>
+                        <CardDished/>
+                        <CardDished/>
+                    </Section>
+
                     <Footer/>
 
                 </div>
