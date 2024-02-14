@@ -7,6 +7,8 @@ export const Container = styled.div`
 
     background-color: ${({theme}) => theme.COLORS.DARK_900};
 
+    overflow: hidden;
+
     > input {
         height: 100%;
         padding-left: 14px;
