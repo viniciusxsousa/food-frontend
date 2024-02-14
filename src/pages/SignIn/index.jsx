@@ -3,6 +3,8 @@ import { Container } from './styles'
 import logo from '../../assets/logo.svg'
 
 import { Button } from '../../components/Button'
+import { Input } from '../../components/Input'
+
 
 export function SignIn() {
     return (
@@ -15,7 +17,7 @@ export function SignIn() {
 
             <form>
                 <label htmlFor="email">E-mail</label>
-                <input id='email' type="text" />
+                <Input id='email' type='text' placeholder='Exemplo: exemplo@exemplo.com.br' />
 
                 <label htmlFor="email">E-mail</label>
                 <input id='email' type="text" />
