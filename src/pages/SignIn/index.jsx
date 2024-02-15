@@ -17,12 +17,20 @@ export function SignIn() {
 
             <form>
                 <label htmlFor="email">E-mail</label>
-                <Input id='email' type='text' placeholder='Exemplo: exemplo@exemplo.com.br' />
+                <Input 
+                    id='email' 
+                    type='text' 
+                    placeholder='Digite seu e-mail' 
+                />
 
-                <label htmlFor="email">E-mail</label>
-                <input id='email' type="text" />
+                <label htmlFor="password">Senha</label>
+                <Input 
+                    id='password' 
+                    type='password' 
+                    placeholder='Digite sua senha' 
+                />
 
-                <Button/>
+                <Button title='Entrar'/>
             </form>
 
             <a href="#">Criar uma conta</a>
