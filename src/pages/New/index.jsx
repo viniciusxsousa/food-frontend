@@ -16,40 +16,40 @@ export function New() {
             <Header/>
 
             <Content>
-                <a href="#"><IoIosArrowBack/> Voltar</a>
+                <div>
+                    <a href="#"><IoIosArrowBack/> Voltar</a>
 
-                <h2>Novo Prato</h2>
+                    <h2>Novo Prato</h2>
 
-                <form>
+                    <form>
 
-                    <label htmlFor="image">Imagem do prato</label>
-                    <Input icon={MdFileUpload} id='image' type='file'/>
+                        <label htmlFor="image">Imagem do prato</label>
+                        <Input icon={MdFileUpload} id='image' type='file'/>
 
-                    <label htmlFor="name">Nome</label>
-                    <Input type='text' placeholder='Ex: Lasanha' />
+                        <label htmlFor="name">Nome</label>
+                        <Input type='text' placeholder='Ex: Lasanha' />
 
-                    <label htmlFor="category">Categoria</label>
-                    <Select id='category'>
-                        <option>Refeição</option>
-                    </Select>
+                        <label htmlFor="category">Categoria</label>
+                        <Select id='category'>
+                            <option>Refeição</option>
+                        </Select>
 
-                    <label htmlFor="price">Preço</label>
-                    <Input type='number' placeholder="R$ 00,00" />
+                        <label htmlFor="price">Preço</label>
+                        <Input type='number' placeholder="R$ 00,00" />
 
-                    <label htmlFor="description">Descrição</label>
-                    
-                    <TextArea>
-                        Fale brevemente sobre o prato, seus ingredientes e composição
-                    </TextArea>
+                        <label htmlFor="description">Descrição</label>
+                        
+                        <TextArea>
+                            Fale brevemente sobre o prato, seus ingredientes e composição
+                        </TextArea>
 
-                    <Button title="Salvar alteração"/>
+                        <Button title="Salvar alteração"/>
 
-                </form>
+                    </form>
+                </div>
 
+                <Footer/>
             </Content>
-
-            <Footer/>
-
 
         </Container>
     )

@@ -3,61 +3,72 @@ import styled from 'styled-components';
 export const Container = styled.div`
     width: 100%;
     height: 100vh;
+
+    display: grid;
+    grid-template-rows: 114px auto;
+    grid-template-areas: 
+    'header'
+    'content';
 `
 
 export const Content = styled.div`
-    padding: 10px 32px;
+    grid-area: 'content';
+    overflow-y: auto;
 
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 24px;
+    > div {
+        padding: 10px 32px;
 
-    > a {
         display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
 
-        font-size: 16px;
-        color: ${({theme}) => theme.COLORS.LIGHT_300};
+        > a {
+            display: flex;
 
-        svg {
-            font-size: 24px;
-        }
-    }
-
-    > form {
-        width: 100%;
-
-        label {
             font-size: 16px;
-            color: ${({theme}) => theme.COLORS.LIGHT_400};
-        }
+            color: ${({theme}) => theme.COLORS.LIGHT_300};
 
-        div {
-            margin: 10px 0 16px;
-        }
-
-        div:nth-child(2){
-            position: relative;
-
-            &::after {
-                content: 'selecione imagem';
-                position: absolute;
-                top: 10px;
-
-                margin-left: 10px;
-            }
-
-            & input[type='file'] {
-                display: none;
+            svg {
+                font-size: 24px;
             }
         }
 
-        > textarea {
-            margin: 10px 0 16px;
-        }
+        > form {
+            width: 100%;
 
-        > button {
-            margin-bottom: 53px;
+            label {
+                font-size: 16px;
+                color: ${({theme}) => theme.COLORS.LIGHT_400};
+            }
+
+            div {
+                margin: 10px 0 16px;
+            }
+
+            div:nth-child(2){
+                position: relative;
+
+                &::after {
+                    content: 'selecione imagem';
+                    position: absolute;
+                    top: 10px;
+
+                    margin-left: 10px;
+                }
+
+                & input[type='file'] {
+                    display: none;
+                }
+            }
+
+            > textarea {
+                margin: 10px 0 16px;
+            }
+
+            > button {
+                margin-bottom: 53px;
+            }
         }
     }
 `
