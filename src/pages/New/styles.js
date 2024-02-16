@@ -81,7 +81,8 @@ export const Ingredients = styled.div`
 
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
+    gap: 10px;
     flex-wrap: wrap;
 
     background-color: ${({theme}) => theme.COLORS.DARK_800};
