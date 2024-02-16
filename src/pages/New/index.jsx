@@ -2,6 +2,7 @@ import { Container, Content } from "./styles";
 
 import { Header } from '../../components/Header';
 import { Input } from '../../components/Input';
+import { Select } from "../../components/Select";
 import { Button } from '../../components/Button'
 
 import { IoIosArrowBack } from "react-icons/io";
@@ -26,9 +27,9 @@ export function New() {
                     <Input type='text' placeholder='Ex: Lasanha' />
 
                     <label htmlFor="category">Categoria</label>
-                    <select id="category">
+                    <Select id='category'>
                         <option>Refeição</option>
-                    </select>
+                    </Select>
 
                     <label htmlFor="price">Preço</label>
                     <Input type='number' placeholder="R$ 00,00" />
