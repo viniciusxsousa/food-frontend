@@ -51,5 +51,13 @@ export const Content = styled.div`
                 display: none;
             }
         }
+
+        > textarea {
+            margin: 10px 0 16px;
+        }
+
+        > button {
+            margin-bottom: 53px;
+        }
     }
 `

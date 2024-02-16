@@ -5,6 +5,7 @@ import { Input } from '../../components/Input';
 import { Select } from "../../components/Select";
 import { Button } from '../../components/Button'
 import { TextArea } from "../../components/TextArea";
+import { Footer } from '../../components/Footer'
 
 import { IoIosArrowBack } from "react-icons/io";
 import { MdFileUpload } from "react-icons/md";
@@ -46,6 +47,8 @@ export function New() {
                 </form>
 
             </Content>
+
+            <Footer/>
 
 
         </Container>
