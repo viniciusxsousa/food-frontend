@@ -5,6 +5,7 @@ import { Input } from '../../components/Input';
 import { Button } from '../../components/Button'
 
 import { IoIosArrowBack } from "react-icons/io";
+import { MdFileUpload } from "react-icons/md";
 
 export function New() {
     return (
@@ -19,7 +20,7 @@ export function New() {
                 <form>
 
                     <label htmlFor="image">Imagem do prato</label>
-                    <Input id='image' type='file'/>
+                    <Input icon={MdFileUpload} id='image' type='file'/>
 
                     <label htmlFor="name">Nome</label>
                     <Input type='text' placeholder='Ex: Lasanha' />

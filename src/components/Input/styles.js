@@ -9,6 +9,13 @@ export const Container = styled.div`
 
     overflow: hidden;
 
+    > svg {
+        font-size: 22px;
+        margin-top: 12px;
+        margin-left: 5px;
+        color: ${({theme}) => theme.COLORS.LIGHT_500};
+    }
+
     > input {
         height: 100%;
         padding-left: 14px;
