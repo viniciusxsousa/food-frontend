@@ -4,6 +4,7 @@ import { Header } from '../../components/Header';
 import { Input } from '../../components/Input';
 import { Select } from "../../components/Select";
 import { Button } from '../../components/Button'
+import { TextArea } from "../../components/TextArea";
 
 import { IoIosArrowBack } from "react-icons/io";
 import { MdFileUpload } from "react-icons/md";
@@ -35,9 +36,10 @@ export function New() {
                     <Input type='number' placeholder="R$ 00,00" />
 
                     <label htmlFor="description">Descrição</label>
-                    <textarea>
-
-                    </textarea>
+                    
+                    <TextArea>
+                        Fale brevemente sobre o prato, seus ingredientes e composição
+                    </TextArea>
 
                     <Button title="Salvar alteração"/>
 
