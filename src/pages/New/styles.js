@@ -36,8 +36,20 @@ export const Content = styled.div`
             margin: 10px 0 16px;
         }
 
-        div input[type='file'] {
-            display: none;
+        div:nth-child(2){
+            position: relative;
+
+            &::after {
+                content: 'selecione imagem';
+                position: absolute;
+                top: 10px;
+
+                margin-left: 10px;
+            }
+
+            & input[type='file'] {
+                display: none;
+            }
         }
     }
 `
