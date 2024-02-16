@@ -46,7 +46,7 @@ export const Content = styled.div`
                 margin: 10px 0 16px;
             }
 
-            div:nth-child(2){
+            > div:nth-child(2){
                 position: relative;
 
                 &::after {
@@ -71,4 +71,20 @@ export const Content = styled.div`
             }
         }
     }
+`
+
+export const Ingredients = styled.div`
+    width: 100%;
+    min-height: 48px;
+
+    padding: 4px 8px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    background-color: ${({theme}) => theme.COLORS.DARK_800};
+
+    border-radius: 8px;
 `
