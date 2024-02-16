@@ -51,7 +51,7 @@ export function Update() {
                         </TextArea>
 
                         <Buttons>
-                            <Button title="Excluir prato"/>
+                            <Button dark title="Excluir prato"/>
                             <Button title='Salvar'/>
                         </Buttons>
 
