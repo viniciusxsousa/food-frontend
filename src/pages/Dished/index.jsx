@@ -1,4 +1,4 @@
-import { Container, Content, Buttons, Ingredients } from "./styles";
+import { Container, Content, Buttons, Ingredients, Back } from "./styles";
 
 import { Ingredient} from '../../components/Ingredient'
 import { Header } from '../../components/Header'
@@ -7,6 +7,7 @@ import { Button } from "../../components/Button";
 import { IoIosRemove, IoIosAdd, IoIosArrowBack } from "react-icons/io";
 
 import mask from '../../assets/mask.png'
+
 
 export function Dished() {
     return (
@@ -17,7 +18,7 @@ export function Dished() {
 
                 <div>
 
-                    <p><IoIosArrowBack/> Voltar</p>
+                    <Back to='/'><IoIosArrowBack/> Voltar</Back>
 
                     <img src={mask} alt="Foto do prato" />
 

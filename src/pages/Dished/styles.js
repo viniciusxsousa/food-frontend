@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import { Link } from 'react-router-dom';
+
 export const Container = styled.div`
     width: 100%;
     height: 100vh;
@@ -14,16 +16,6 @@ export const Container = styled.div`
 export const Content = styled.div`
    grid-area: content;
    padding: 16px 36px 33px;
-
-   >div p:first-child {
-     display: flex;
-     align-items: center;
-     gap: 2px;
-
-     svg {
-        font-size: 30px;
-     }
-   }
 
    > div img {
      width: 244px;
@@ -46,6 +38,16 @@ export const Content = styled.div`
 
     margin-bottom: 48px;
    }
+`
+
+export const Back = styled(Link)`
+     display: flex;
+     align-items: center;
+     gap: 2px;
+
+     svg {
+        font-size: 30px;
+     }
 `
 
 export const Buttons = styled.div`

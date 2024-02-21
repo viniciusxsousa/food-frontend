@@ -1,4 +1,4 @@
-import { Container, Price, Buttons } from "./styles";
+import { Container, Price, Buttons, Dished } from "./styles";
 
 import { FaRegHeart } from "react-icons/fa";
 import { IoIosRemove, IoIosAdd } from "react-icons/io";
@@ -16,7 +16,7 @@ export function CardDished() {
 
             <img src={mask} alt="Imagem do prato" />
 
-            <p>Salada Ravanello {'>'}</p>
+            <Dished to='dished/8'>Salada Ravanello {'>'}</Dished>
 
             <Price>R$ 49,97</Price>
 

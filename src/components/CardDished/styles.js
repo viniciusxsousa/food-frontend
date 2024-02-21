@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import { Link } from 'react-router-dom';  
+
 export const Container = styled.article`
     width: 210px;
     height: 292px;
@@ -38,6 +40,11 @@ export const Container = styled.article`
         font-size: 12px;
         font-weight: 500;
     }
+`
+
+export const Dished = styled(Link)`
+        font-size: 12px;
+        font-weight: 500;
 `
 
 export const Price = styled.p`
