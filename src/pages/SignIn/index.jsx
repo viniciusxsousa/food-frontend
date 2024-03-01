@@ -7,8 +7,14 @@ import logo from '../../assets/logo.svg'
 import { Button } from '../../components/Button'
 import { Input } from '../../components/Input'
 
+import { useContext } from 'react'
+import { MyContext } from '../../myContext'
+
 
 export function SignIn() {
+
+    const data = useContext(MyContext);
+
     return (
         <Container>
 
