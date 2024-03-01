@@ -32,7 +32,9 @@ export function SignUp() {
         })
         .catch(error => {
             if(error.response) {
-                alert(error.response.data.message)
+                alert(error.response.data.message);
+            } else {
+                alert('Não foi possível realizar o cadastro. Por favor tente mais tarde.');
             }
         })
     } 
