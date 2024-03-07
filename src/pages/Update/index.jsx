@@ -78,8 +78,10 @@ export function Update() {
                         <label htmlFor="category">Categoria</label>
                         <Select id='category'>
                             { categories && categories.map( category => 
-                                <option key={category.id} value={category.id}>{category.name}</option>     
-                            )}
+                                    category.id === dishedCategory ?  
+                                    (<option selected key={category.id} value={category.id}>{category.name}</option>) : (<option key={category.id} value={category.id}>{category.name}</option>)
+                                )
+                            }
                         </Select>
 
                         <label htmlFor="ingredient">Ingredientes</label>
