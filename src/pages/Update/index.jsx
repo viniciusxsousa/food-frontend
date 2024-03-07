@@ -26,11 +26,21 @@ export function Update() {
 
     const [categories, setCategories] = useState();
 
+    const [ newIngredient, setNewIngredient ] = useState('');
+
     const params = useParams();
     const navigate = useNavigate();
 
     function handleBack() {
         navigate('/');
+    }
+
+    async function handleAddIngredient() {
+
+        const response = await api.post('/ingredients', { name: newIngredient, dishe_id: params.id });
+
+        setIngredients(prevState => [...prevState, response.data]);
+        setNewIngredient('');
     }
 
     useEffect(() => {
@@ -90,8 +100,13 @@ export function Update() {
                                ingredients && ingredients.map( ingredient => 
                                     <InputIngredient key={ingredient.id} value={ingredient.name}/>)
                             }
-                            <InputIngredient value='batata'/>
-                            <InputIngredient isNew placeholder='Adicionar'/>
+                            <InputIngredient 
+                                isNew 
+                                placeholder='Adicionar'
+                                value={newIngredient}
+                                onChange={e => setNewIngredient(e.target.value)}
+                                onClick={handleAddIngredient}
+                            />
                         </Ingredients>
 
                         <label htmlFor="price">Preço</label>
