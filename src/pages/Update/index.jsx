@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
 import { api } from '../../services/api'
 
@@ -25,11 +26,13 @@ export function Update() {
 
     const [categories, setCategories] = useState();
 
+    const params = useParams();
+
     useEffect(() => {
 
         async function searchDished() {
             try {
-                const dished = await api.get('dishes/8');
+                const dished = await api.get(`dishes/${params.id}`);
                 const categorys = await api.get('categories');
 
                 setName(dished.data.dished.name);
