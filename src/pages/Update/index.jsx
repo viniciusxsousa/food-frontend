@@ -1,3 +1,7 @@
+import { useState, useEffect } from "react";
+
+import { api } from '../../services/api'
+
 import { Container, Content, Ingredients, Buttons } from "./styles"; 
 
 import { Header } from '../../components/Header';
@@ -12,6 +16,37 @@ import { IoIosArrowBack } from "react-icons/io";
 import { MdFileUpload } from "react-icons/md";
 
 export function Update() {
+    const [dished, setDished] = useState({});
+
+    const [name, setName] = useState();
+    const [category, setCategory] = useState();
+    const [ingredients, setIngredients] = useState();
+    const [price, setPrice] = useState();
+    const [description, setDescription] = useState();
+
+    useEffect(() => {
+
+        async function searchDished() {
+            try {
+                const dished = await api.get('dishes/8');
+
+                setName(dished.data.dished.name);
+                setCategory(dished.data.dished.category);
+                setIngredients(dished.data.ingredients);
+                setPrice(dished.data.dished.price);
+                setDescription(dished.data.dished.description);
+
+                console.log(description);
+
+            }catch(error) {
+                
+            }
+        }
+
+        searchDished();
+
+    }, [])
+
     return (
         <Container>
             <Header/>
@@ -28,7 +63,7 @@ export function Update() {
                         <Input icon={MdFileUpload} id='image' type='file'/>
 
                         <label htmlFor="name">Nome</label>
-                        <Input type='text' placeholder='Ex: Lasanha' />
+                        <Input type='text' placeholder='Ex: Lasanha' value={name} />
 
                         <label htmlFor="category">Categoria</label>
                         <Select id='category'>
@@ -37,17 +72,21 @@ export function Update() {
 
                         <label htmlFor="ingredient">Ingredientes</label>
                         <Ingredients>
+                            {
+                               ingredients && ingredients.map( ingredient => 
+                                    <InputIngredient key={ingredient.id} value={ingredient.name}/>)
+                            }
                             <InputIngredient value='batata'/>
                             <InputIngredient isNew placeholder='Adicionar'/>
                         </Ingredients>
 
                         <label htmlFor="price">Preço</label>
-                        <Input type='number' placeholder="R$ 00,00" />
+                        <Input type='number' placeholder="R$ 00,00"  value={price}/>
 
                         <label htmlFor="description">Descrição</label>
                         
                         <TextArea>
-                            Fale brevemente sobre o prato, seus ingredientes e composição
+                           affs
                         </TextArea>
 
                         <Buttons>
