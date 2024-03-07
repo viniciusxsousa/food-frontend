@@ -16,27 +16,29 @@ import { IoIosArrowBack } from "react-icons/io";
 import { MdFileUpload } from "react-icons/md";
 
 export function Update() {
-    const [dished, setDished] = useState({});
 
     const [name, setName] = useState();
-    const [category, setCategory] = useState();
+    const [dishedCategory, setDishedCategory] = useState();
     const [ingredients, setIngredients] = useState();
     const [price, setPrice] = useState();
     const [description, setDescription] = useState();
+
+    const [categories, setCategories] = useState();
 
     useEffect(() => {
 
         async function searchDished() {
             try {
                 const dished = await api.get('dishes/8');
+                const categorys = await api.get('categories');
 
                 setName(dished.data.dished.name);
-                setCategory(dished.data.dished.category);
+                setDishedCategory(dished.data.dished.category);
                 setIngredients(dished.data.ingredients);
                 setPrice(dished.data.dished.price);
                 setDescription(dished.data.dished.description);
 
-                console.log(description);
+                setCategories(categorys.data);
 
             }catch(error) {
                 
@@ -67,7 +69,9 @@ export function Update() {
 
                         <label htmlFor="category">Categoria</label>
                         <Select id='category'>
-                            <option>Refeição</option>
+                            { categories && categories.map( category => 
+                                <option key={category.id} value={category.id}>{category.name}</option>     
+                            )}
                         </Select>
 
                         <label htmlFor="ingredient">Ingredientes</label>
@@ -85,8 +89,7 @@ export function Update() {
 
                         <label htmlFor="description">Descrição</label>
                         
-                        <TextArea>
-                           affs
+                        <TextArea value={description}>
                         </TextArea>
 
                         <Buttons>
