@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 import { api } from '../../services/api'
 
@@ -27,6 +27,11 @@ export function Update() {
     const [categories, setCategories] = useState();
 
     const params = useParams();
+    const navigate = useNavigate();
+
+    function handleBack() {
+        navigate('/');
+    }
 
     useEffect(() => {
 
@@ -58,7 +63,7 @@ export function Update() {
 
             <Content>
                 <div>
-                    <a href="#"><IoIosArrowBack/> Voltar</a>
+                    <p onClick={handleBack} ><IoIosArrowBack/> Voltar</p>
 
                     <h2>Editar Prato</h2>
 
