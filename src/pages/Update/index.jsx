@@ -37,17 +37,35 @@ export function Update() {
 
     async function handleAddIngredient() {
 
-        const response = await api.post('/ingredients', { name: newIngredient, dishe_id: params.id });
+        try {
+            const response = await api.post('/ingredients', { name: newIngredient, dishe_id: params.id });
+    
+            setIngredients(prevState => [...prevState, response.data]);
+            setNewIngredient('');
+        } catch(error) {
+            if(error.response) {
+                alert(error.response.data.message);
+            } else {
+                alert('Erro, por favor tente mais tarde');
+            }
+        }
 
-        setIngredients(prevState => [...prevState, response.data]);
-        setNewIngredient('');
     }
 
     async function handleRemoveIngredient(id) {
 
-        await api.delete(`/ingredients/${id}`);
-
-        setIngredients(prevState => prevState.filter( ingredient => ingredient.id !== id ));
+        try {
+            await api.delete(`/ingredients/${id}`);
+        
+            setIngredients(prevState => prevState.filter( ingredient => ingredient.id !== id ));
+        } catch(error) {
+            if(error.response) {
+                alert(error.response.data.message);
+            } else {
+                alert("Erro, por favor tente mais tarde");
+            }
+        }
+            
 
     }
 
