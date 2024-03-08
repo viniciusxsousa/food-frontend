@@ -1,3 +1,6 @@
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+
 import { Container, Content, Buttons, Ingredients, Back } from "./styles";
 
 import { Ingredient} from '../../components/Ingredient'
@@ -7,9 +10,41 @@ import { Button } from "../../components/Button";
 import { IoIosRemove, IoIosAdd, IoIosArrowBack } from "react-icons/io";
 
 import mask from '../../assets/mask.png'
+import { api } from "../../services/api";
 
 
 export function Dished() {
+    const [dished, setDished] = useState();
+    const [ingredients, setIngredients] = useState();
+
+    const params = useParams();
+
+    useEffect(() => {
+
+        async function searchDished() {
+
+            try {
+                const response = await api.get(`dishes/${params.id}`);
+
+                setDished(response.data.dished);
+                setIngredients(response.data.ingredients);
+
+            } catch (error) {
+                if(error.response) {
+                    alert(error.response.data.message);
+                } else {
+                    alert('Serviço indisponível');
+                }
+            }
+
+        }
+
+        searchDished();
+        /* console.log(dished); */
+
+    }, [])
+
+
     return (
         <Container>
             <Header/>
@@ -22,17 +57,17 @@ export function Dished() {
 
                     <img src={mask} alt="Foto do prato" />
 
-                    <h2>Salada Ravanello</h2>
+                    <h2>{dished ? dished.name : 'Sem nome'}</h2>
 
-                    <p>Rabanetes, folhas verdes e molho agridoce salpicados com gergelim.</p>
+                    <p>{dished ? dished.description: 'Sem descrição'}</p>
 
                     <Ingredients>
-                        <Ingredient title='alface'/>
-                        <Ingredient title='cebola'/>
-                        <Ingredient title='pão naan'/>
-                        <Ingredient title='pepino'/>
-                        <Ingredient title='rabanete'/>
-                        <Ingredient title='tomate'/>
+                        { ingredients && ingredients.map( ingredient => 
+                            <Ingredient 
+                                key={ingredient.id} 
+                                title={ingredient.name} 
+                            /> 
+                        )}
                     </Ingredients>
 
                     <Buttons>
