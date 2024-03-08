@@ -7,7 +7,7 @@ import { Button } from "../Button";
 
 import mask from '../../assets/mask.png'
 
-export function CardDished() {
+export function CardDished({ dished }) {
     return(
         <Container>
             <button>
@@ -16,9 +16,9 @@ export function CardDished() {
 
             <img src={mask} alt="Imagem do prato" />
 
-            <Dished to='dished/8'>Salada Ravanello {'>'}</Dished>
+            <Dished to={`dished/${dished.id}`}>{dished.name} {'>'}</Dished>
 
-            <Price>R$ 49,97</Price>
+            <Price>R$ {dished.price}</Price>
 
             <Buttons>
                 <IoIosRemove/>

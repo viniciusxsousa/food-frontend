@@ -74,7 +74,7 @@ export function Home() {
                         (<Section key={category.id} title={category.name}>
                             {
                                 dishes.map( dished => 
-                                    dished.category === category.id && <CardDished/> 
+                                    dished.category === category.id && <CardDished dished={dished}/> 
                                 )
                             }
                         </Section> ))
