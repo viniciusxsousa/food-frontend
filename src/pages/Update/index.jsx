@@ -43,6 +43,14 @@ export function Update() {
         setNewIngredient('');
     }
 
+    async function handleRemoveIngredient(id) {
+
+        await api.delete(`/ingredients/${id}`);
+
+        setIngredients(prevState => prevState.filter( ingredient => ingredient.id !== id ));
+
+    }
+
     useEffect(() => {
 
         async function searchDished() {
@@ -57,7 +65,6 @@ export function Update() {
                 setDescription(dished.data.dished.description);
 
                 setCategories(categorys.data);
-
             }catch(error) {
                 
             }
@@ -98,7 +105,11 @@ export function Update() {
                         <Ingredients>
                             {
                                ingredients && ingredients.map( ingredient => 
-                                    <InputIngredient key={ingredient.id} value={ingredient.name}/>)
+                                    <InputIngredient 
+                                        key={ingredient.id} 
+                                        value={ingredient.name}
+                                        onClick={() => handleRemoveIngredient(ingredient.id)}
+                                    />)
                             }
                             <InputIngredient 
                                 isNew 

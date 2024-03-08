@@ -12,7 +12,7 @@ export function InputIngredient({isNew, onClick, value, ...rest}) {
                 {...rest}
             />
 
-            {isNew ? <GoPlus onClick={onClick} /> : <GoX />}
+            {isNew ? <GoPlus onClick={onClick} /> : <GoX onClick={onClick} />}
         </Container>
     )
 }
