@@ -90,6 +90,10 @@ export const Ingredients = styled.div`
     background-color: ${({theme}) => theme.COLORS.DARK_800};
 
     border-radius: 8px;
+
+    @media screen and (max-width: 320px){
+        justify-content: center;
+    }
 `
 
 export const Buttons = styled.div`
