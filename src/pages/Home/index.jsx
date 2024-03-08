@@ -11,6 +11,7 @@ import { Container, Content, Flavors } from "./styles"
 
 export function Home() {
     const [categories, setCategories] = useState();
+    const [dishes, setDishes] = useState();
 
 
     useEffect(() => {
@@ -31,7 +32,26 @@ export function Home() {
             }
         }
 
+        async function searchDished() {
+
+            try {
+
+                const response = await api.get("/dishes?name&ingredients")
+
+                setDishes(response.data);
+
+            } catch(error) {
+                if(error.response) {
+                    alert(error.response.data.message)
+                } else {
+                    alert('Serviço indisponível.');
+                }
+            }
+
+        }
+
         searchCategories();
+        searchDished();
 
     }, [])
 
@@ -52,7 +72,11 @@ export function Home() {
                     {
                         categories && categories.map( category => 
                         (<Section key={category.id} title={category.name}>
-                            <CardDished/>
+                            {
+                                dishes.map( dished => 
+                                    dished.category === category.id && <CardDished/> 
+                                )
+                            }
                         </Section> ))
                     }
 
