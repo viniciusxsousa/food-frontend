@@ -87,6 +87,19 @@ export function Update() {
 
     }
 
+    async function handleDeleteDished(e) {
+        e.preventDefault();
+        const verify = confirm('Deseja excluir esse prato ?');
+
+        if(verify) {
+           await api.delete(`/dishes/${params.id}`);
+           navigate('/');
+        }
+
+        return
+
+    }
+
     useEffect(() => {
 
         async function searchDished() {
@@ -178,7 +191,7 @@ export function Update() {
                         </TextArea>
 
                         <Buttons>
-                            <Button dark title="Excluir prato"/>
+                            <Button dark title="Excluir prato" onClick={handleDeleteDished} />
                             <Button title='Salvar' onClick={handleUpdate}/>
                         </Buttons>
 
