@@ -69,6 +69,24 @@ export function Update() {
 
     }
 
+    async function handleUpdate(e) {
+        e.preventDefault();
+
+        try {
+
+            await api.put(`/dishes/${params.id}`, {name, description, category: dishedCategory, price});
+            alert('Prato atualizado com sucesso!');
+
+        } catch(error) {
+            if(error.response) {
+                alert(error.response.data.message);
+            } else {
+                alert('Não foi possível concluir. Por favor tente mais tarde.');
+            }
+        }
+
+    }
+
     useEffect(() => {
 
         async function searchDished() {
@@ -108,7 +126,12 @@ export function Update() {
                         <Input icon={MdFileUpload} id='image' type='file'/>
 
                         <label htmlFor="name">Nome</label>
-                        <Input type='text' placeholder='Ex: Lasanha' value={name} />
+                        <Input 
+                            type='text'
+                            placeholder='Ex: Lasanha'  
+                            value={name} 
+                            onChange={e => setName(e.target.value)}
+                        />
 
                         <label htmlFor="category">Categoria</label>
                         <Select id='category'>
@@ -139,16 +162,24 @@ export function Update() {
                         </Ingredients>
 
                         <label htmlFor="price">Preço</label>
-                        <Input type='number' placeholder="R$ 00,00"  value={price}/>
+                        <Input 
+                            type='number' 
+                            placeholder="R$ 00,00"  
+                            value={price}
+                            onChange={e => setPrice(parseFloat(e.target.value))}
+                        />
 
                         <label htmlFor="description">Descrição</label>
                         
-                        <TextArea value={description}>
+                        <TextArea 
+                            value={description}
+                            onChange={e => setDescription(e.target.value)}
+                        >
                         </TextArea>
 
                         <Buttons>
                             <Button dark title="Excluir prato"/>
-                            <Button title='Salvar'/>
+                            <Button title='Salvar' onClick={handleUpdate}/>
                         </Buttons>
 
                     </form>
