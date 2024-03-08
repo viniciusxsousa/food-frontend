@@ -134,7 +134,7 @@ export function Update() {
                         />
 
                         <label htmlFor="category">Categoria</label>
-                        <Select id='category'>
+                        <Select id='category' onChange={e => setDishedCategory(e.target.value)} >
                             { categories && categories.map( category => 
                                     category.id === dishedCategory ?  
                                     (<option selected key={category.id} value={category.id}>{category.name}</option>) : (<option key={category.id} value={category.id}>{category.name}</option>)
