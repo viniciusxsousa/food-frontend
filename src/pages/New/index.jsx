@@ -35,15 +35,28 @@ export function New() {
         setIngredients(prevState => prevState.filter( item => item !== ingredient ));
     }
 
-    function handleCreateDished(e) {
+    async function handleCreateDished(e) {
         e.preventDefault();
-        console.log({
-            name,
-            category,
-            ingredients,
-            price,
-            description
-        })
+        
+        try{
+            
+            await api.post('dishes', {
+                name,
+                description,
+                category,
+                price,
+                ingredients
+            })
+
+            alert('Prato cadastrado com sucesso.');
+
+        }catch(error) {
+            if(error.response) {
+                alert(error.response.data.message);
+            } else {
+                alert('Serviço indisponível. Por favor tente mais tarde.')
+            }
+        }
     }
 
     useEffect(() => {
