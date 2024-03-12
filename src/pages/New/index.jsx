@@ -1,3 +1,7 @@
+import { useState, useEffect } from "react";
+
+import { api } from "../../services/api";
+
 import { Container, Content, Ingredients } from "./styles"; 
 
 import { Header } from '../../components/Header';
@@ -12,6 +16,58 @@ import { IoIosArrowBack } from "react-icons/io";
 import { MdFileUpload } from "react-icons/md";
 
 export function New() {
+    const [categories, setCategories] = useState();
+
+    const [name, setName] = useState();
+    const [category, setCategory] = useState(1);
+    const [ingredients, setIngredients] = useState([]);
+    const [price, setPrice] = useState();
+    const [description, setDescription] = useState();
+
+    const [ingredient, setIngredient] = useState();
+
+    function handleAddIngredients(ingredient) {
+        setIngredients(prevState => [...prevState, ingredient]);
+        setIngredient('');
+    }
+
+    function handleRemoveIngredietns(ingredient) {
+        setIngredients(prevState => prevState.filter( item => item !== ingredient ));
+    }
+
+    function handleCreateDished(e) {
+        e.preventDefault();
+        console.log({
+            name,
+            category,
+            ingredients,
+            price,
+            description
+        })
+    }
+
+    useEffect(() => {
+
+        async function searchCategory() {
+
+            try{
+                const response = await api.get('categories');
+
+                setCategories(response.data);
+            } catch(error) {
+                if(error.response) {
+                    alert(error.response.data.message);
+                } else {
+                    alert("Serviço indisponível, por favor tente mais tarde.");
+                }
+            }
+
+        }
+
+        searchCategory();
+
+    }, [])
+
     return (
         <Container>
             <Header/>
@@ -28,29 +84,62 @@ export function New() {
                         <Input icon={MdFileUpload} id='image' type='file'/>
 
                         <label htmlFor="name">Nome</label>
-                        <Input type='text' placeholder='Ex: Lasanha' />
+                        <Input 
+                            value={name}
+                            type='text' 
+                            placeholder='Ex: Lasanha'  
+                            onChange={ e => setName(e.target.value)}
+                        />
 
                         <label htmlFor="category">Categoria</label>
-                        <Select id='category'>
-                            <option>Refeição</option>
+                        <Select id='category' onChange={e => setCategory(e.target.value)}>
+                            {
+                                categories && categories.map( category => 
+                                    <option key={category.id} value={category.id}> 
+                                        {category.name} 
+                                    </option>
+                                )
+                            }
                         </Select>
 
                         <label htmlFor="ingredient">Ingredientes</label>
                         <Ingredients>
-                            <InputIngredient value='batata'/>
-                            <InputIngredient isNew placeholder='Adicionar'/>
+                            { ingredients && ingredients.map( item => 
+                                <InputIngredient
+                                    value={item}
+                                    onClick={() => handleRemoveIngredietns(item)}
+                                />    
+                            )}
+                            <InputIngredient 
+                                isNew 
+                                value={ingredient}
+                                placeholder='Adicionar'
+                                onChange={ e => setIngredient(e.target.value) } 
+                                onClick={() => {handleAddIngredients(ingredient)}}
+                            />
                         </Ingredients>
 
                         <label htmlFor="price">Preço</label>
-                        <Input type='number' placeholder="R$ 00,00" />
+                        <Input 
+                            type='number' 
+                            placeholder="R$ 00,00" 
+                            value={price}
+                            onChange={ e => setPrice(e.target.value) }
+                        />
 
                         <label htmlFor="description">Descrição</label>
                         
-                        <TextArea>
+                        <TextArea
+                            value={description}
+                            onChange={ e => setDescription(e.target.value) }
+                        >
                             Fale brevemente sobre o prato, seus ingredientes e composição
                         </TextArea>
 
-                        <Button title="Salvar alteração"/>
+                        <Button 
+                            title="Salvar alteração"
+                            onClick={handleCreateDished}
+                        />
 
                     </form>
                 </div>
