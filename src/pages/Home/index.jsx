@@ -7,7 +7,7 @@ import { Footer } from "../../components/Footer"
 import { Section } from "../../components/Section"
 import { CardDished } from "../../components/CardDished"
 
-import { Container, Content, Flavors } from "./styles"
+import { Container, Content, Flavors, New } from "./styles"
 
 export function Home() {
     const [categories, setCategories] = useState();
@@ -63,6 +63,8 @@ export function Home() {
             <Content>
                 
                 <div>
+
+                    <New to='/new'>Novo Prato</New>
 
                     <Flavors>
                         <h2>Sabores inigualáveis</h2>

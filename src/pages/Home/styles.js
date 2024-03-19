@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 
+import { Link } from 'react-router-dom'
+
 export const Container = styled.div`
     width: 100%;
     height: 100vh;
@@ -38,3 +40,9 @@ export const Flavors = styled.div`
         padding: 5px 10px 0;
     }
 `
+
+export const New = styled(Link)`
+    display: inline-block;
+    padding-left: 20px;
+    padding-bottom: 15px;
+` 
