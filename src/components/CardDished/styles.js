@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 export const Container = styled.article`
     width: 210px;
-    height: 292px;
+    max-height: 292px;
     border-radius: 8px;
     padding: 24px;
 

@@ -1,17 +1,29 @@
 import { Container, Price, Buttons, Dished } from "./styles";
 
-import { FaRegHeart } from "react-icons/fa";
+import { FaRegHeart, FaPen } from "react-icons/fa";
 import { IoIosRemove, IoIosAdd } from "react-icons/io";
 
 import { Button } from "../Button";
 
+import { useAuth } from "../../hooks/auth"; 
+import { useNavigate } from "react-router-dom";
+
 import mask from '../../assets/mask.png'
 
 export function CardDished({ dished }) {
+    const { user } = useAuth();
+
+    const navigate = useNavigate();
+
+    function handleUpdate() {
+        navigate(`/update/${dished.id}`);
+    }
+
+
     return(
         <Container>
             <button>
-                <FaRegHeart/>
+                {user.rule === 'user' ? <FaRegHeart/> : <FaPen onClick={handleUpdate}/>}
             </button>
 
             <img src={mask} alt="Imagem do prato" />
@@ -20,13 +32,17 @@ export function CardDished({ dished }) {
 
             <Price>R$ {dished.price}</Price>
 
-            <Buttons>
-                <IoIosRemove/>
-                <span>01</span>
-                <IoIosAdd/>
-            </Buttons>
-
-            <Button title="incluir"/>
+            {  user.rule === 'user' && 
+              <>
+                    <Buttons>
+                        <IoIosRemove/>
+                        <span>01</span>
+                        <IoIosAdd/>
+                    </Buttons>
+        
+                    <Button title="incluir"/>
+                </>
+            }
 
         </Container>
     )
