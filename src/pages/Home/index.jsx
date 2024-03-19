@@ -9,10 +9,13 @@ import { CardDished } from "../../components/CardDished"
 
 import { Container, Content, Flavors, New } from "./styles"
 
+import { useAuth } from '../../hooks/auth'
+
 export function Home() {
     const [categories, setCategories] = useState();
     const [dishes, setDishes] = useState();
 
+    const { user } = useAuth();
 
     useEffect(() => {
 
@@ -64,7 +67,7 @@ export function Home() {
                 
                 <div>
 
-                    <New to='/new'>Novo Prato</New>
+                    { user.rule === 'admin' &&  <New to='/new'>Novo Prato</New>}
 
                     <Flavors>
                         <h2>Sabores inigualáveis</h2>
