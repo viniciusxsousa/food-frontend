@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 import { Container, Content, Buttons, Ingredients, Back } from "./styles";
 
@@ -11,6 +11,7 @@ import { IoIosRemove, IoIosAdd, IoIosArrowBack } from "react-icons/io";
 
 import mask from '../../assets/mask.png'
 import { api } from "../../services/api";
+import { useAuth } from "../../hooks/auth";
 
 
 export function Dished() {
@@ -18,6 +19,12 @@ export function Dished() {
     const [ingredients, setIngredients] = useState();
 
     const params = useParams();
+    const navigate = useNavigate();
+    const { user } = useAuth();
+
+    function handleUpdate() {
+        navigate(`/update/${params.id}`)
+    }
 
     useEffect(() => {
 
@@ -70,12 +77,19 @@ export function Dished() {
                         )}
                     </Ingredients>
 
-                    <Buttons>
-                        <IoIosRemove/>
-                        <span>01</span>
-                        <IoIosAdd/>
-                        <Button title='pedir'/>
-                    </Buttons>
+                    {  user.rule === 'user' &&
+                        <Buttons>
+                            <IoIosRemove/>
+                            <span>01</span>
+                            <IoIosAdd/>
+                            <Button title='pedir'/>
+                        </Buttons>
+                    }
+
+                    {
+                        user.rule === 'admin' && <Button  title='Editar prato' onClick={handleUpdate}/>
+                    }
+
 
                 </div>
 
