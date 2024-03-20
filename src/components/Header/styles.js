@@ -25,6 +25,12 @@ export const Logo = styled.div`
     > h1 {
         font-size: 21px;
     }
+
+    > span {
+       color: ${ ({theme}) => theme.COLORS.CAKE_200 };
+       font-size: 10px;
+       transform: translateY(10px);
+    }
 `
 
 export const Order = styled.div`

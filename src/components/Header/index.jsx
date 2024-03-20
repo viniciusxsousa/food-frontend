@@ -9,7 +9,7 @@ import logo from '../../assets/logo.svg'
 
 export function Header() {
 
-    const { logout } = useAuth();
+    const { logout, user } = useAuth();
 
     return (
         <Container>
@@ -18,12 +18,17 @@ export function Header() {
             <Logo>
                 <img src={logo} alt="logo do food" />
                 <h1>food explorer</h1>
+                { user.rule === 'admin' && <span>admin</span> }
             </Logo>
 
-            <Order onClick={logout}>
-                <CgNotes/>
-                <div>0</div>
-            </Order>
+            {
+                user.rule === 'user' &&
+                <Order onClick={logout}>
+                    <CgNotes/>
+                    <div>0</div>
+                </Order>
+            }
+
         </Container>
     )
 }
