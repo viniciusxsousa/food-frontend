@@ -5,7 +5,7 @@ export const Container = styled.div`
     margin-bottom: 24px;
 
     > h2 {
-        font-size: 18px;
+        font-size: 1.8rem;
         font-weight: 500;
         margin-bottom: 18px;
     }

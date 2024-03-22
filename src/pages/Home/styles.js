@@ -31,12 +31,12 @@ export const Flavors = styled.div`
 
     > h2 {
         padding: 36px 10px 0;
-        font-size: 18px;
+        font-size: 1.8rem;
         letter-spacing: 1.5px;
     }
 
     p {
-        font-size: 12px;
+        font-size: 1.2rem;
         padding: 5px 10px 0;
     }
 `
