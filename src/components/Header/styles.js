@@ -23,12 +23,12 @@ export const Logo = styled.div`
     }
 
     > h1 {
-        font-size: 21px;
+        font-size: 2rem;
     }
 
     > span {
        color: ${ ({theme}) => theme.COLORS.CAKE_200 };
-       font-size: 10px;
+       font-size: 1rem;
        transform: translateY(10px);
     }
 `
@@ -37,7 +37,7 @@ export const Order = styled.div`
     position: relative;
 
     > svg {
-        font-size: 28px;
+        font-size: 2.8rem;
     }
 
     > div {
