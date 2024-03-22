@@ -35,20 +35,16 @@ export const Container = styled.article`
 
         margin-top: -30px;
     }
-
-    > p {
-        font-size: 12px;
-        font-weight: 500;
-    }
 `
 
 export const Dished = styled(Link)`
-        font-size: 12px;
+        font-size: 1.4rem;
         font-weight: 500;
 `
 
 export const Price = styled.p`
     color: ${({theme}) => theme.COLORS.CAKE_200};
+    font-size: 1.6rem;
 `
 
 export const Buttons = styled.div`
@@ -59,5 +55,9 @@ export const Buttons = styled.div`
 
     > svg {
         font-size: 30px;
+    }
+
+    > span {
+        font-size: 1.6rem;
     }
 `

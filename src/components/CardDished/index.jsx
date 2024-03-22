@@ -40,7 +40,7 @@ export function CardDished({ dished }) {
                         <IoIosAdd/>
                     </Buttons>
         
-                    <Button title="incluir"/>
+                    <Button title="Incluir"/>
                 </>
             }
 
