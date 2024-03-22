@@ -15,12 +15,12 @@ export const Container = styled.footer`
     }
 
     > div h2 {
-        font-size: 10px;
+        font-size: 1rem;
         font-weight: 500;
         color: ${({theme}) => theme.COLORS.LIGHT_700};
     }
 
     p {
-        font-size: 9px;
+        font-size: .9rem;
     }
 `
