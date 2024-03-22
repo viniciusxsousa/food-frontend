@@ -22,12 +22,12 @@ export const Content = styled.div`
 `
 
 export const Flavors = styled.div`
-    margin: 0px 16px 0 20px;
+    margin: 0px 16px 0px 20px;
+    padding-bottom: 22px;
 
     background: linear-gradient(180deg, rgba(9,30,38,1) 15%, rgba(0,19,28,1) 76%);
 
-    width: 280px;
-    height: 120px;
+    width: 88%;
 
     > h2 {
         padding: 36px 10px 0;
@@ -37,7 +37,7 @@ export const Flavors = styled.div`
 
     p {
         font-size: 1.2rem;
-        padding: 5px 10px 0;
+        padding: 5px 10px 0px;
     }
 `
 
