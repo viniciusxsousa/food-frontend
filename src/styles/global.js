@@ -7,15 +7,21 @@ export default createGlobalStyle`
         box-sizing: border-box;
     }
 
+    :root {
+        font-size: 62.5%;
+    }
+
     body {
         background-color: ${({theme}) => theme.COLORS.DARK_400};
         color: ${({theme}) => theme.COLORS.LIGHT_100};
+        font-size: 1.2rem;
+
     }
 
     body, button, input, textarea, a {
         font-family: "Poppins", sans-serif;
         color: ${({theme}) => theme.COLORS.LIGHT_100};
-        font-size: 16px;
+        font-size: 1.2rem;
         text-decoration: none;
     }
 
