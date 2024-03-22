@@ -11,6 +11,8 @@ import { Container, Content, Flavors, New } from "./styles"
 
 import { useAuth } from '../../hooks/auth'
 
+import spices from '../../assets/temperos.png';
+
 export function Home() {
     const [categories, setCategories] = useState();
     const [dishes, setDishes] = useState();
@@ -70,6 +72,7 @@ export function Home() {
                     { user.rule === 'admin' &&  <New to='/new'>Novo Prato</New>}
 
                     <Flavors>
+                        <img src={spices} alt="Fotos ilustrativas de temperos" />
                         <h2>Sabores inigualáveis</h2>
                         <p>Sinta o cuidado do preparo com ingredientes selecionados.</p>
                     </Flavors>
