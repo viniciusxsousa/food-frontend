@@ -6,8 +6,9 @@ import { Header } from "../../components/Header"
 import { Footer } from "../../components/Footer"
 import { Section } from "../../components/Section"
 import { CardDished } from "../../components/CardDished"
+import { SideMenu } from "../../components/SideMenu"
 
-import { Container, Content, Flavors, New } from "./styles"
+import { Container, Content, Flavors } from "./styles"
 
 import { useAuth } from '../../hooks/auth'
 
@@ -65,11 +66,11 @@ export function Home() {
         <Container>
             <Header/>
 
+            <SideMenu/>
+
             <Content>
                 
                 <div>
-
-                    { user.rule === 'admin' &&  <New to='/new'>Novo Prato</New>}
 
                     <Flavors>
                         <img src={spices} alt="Fotos ilustrativas de temperos" />

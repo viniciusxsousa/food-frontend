@@ -61,9 +61,3 @@ export const Flavors = styled.div`
     }
 
 `
-
-export const New = styled(Link)`
-    display: inline-block;
-    padding-left: 20px;
-    padding-bottom: 15px;
-` 
