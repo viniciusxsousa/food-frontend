@@ -1,5 +1,7 @@
 import { styled } from "styled-components";
 
+import { BREAKPOINTS } from '../../styles/breakpoints'
+
 export const Container = styled.header`
     width: 100%;
     padding: 60px 26px 24px;
@@ -51,5 +53,18 @@ export const Order = styled.div`
         background-color: ${({theme}) => theme.COLORS.TOMATO_200};
         top: -5px;
         right: -5px;
+    }
+`
+
+export const Menu = styled.button`
+    border: none;
+    background-color: transparent;
+
+    > svg {
+        font-size: 2.4rem;
+    }
+
+    @media screen and (min-width: ${BREAKPOINTS.DESKTOP}) {
+        display: none;
     }
 `

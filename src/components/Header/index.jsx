@@ -1,4 +1,4 @@
-import { Container, Logo, Order } from "./styles";
+import { Container, Logo, Order, Menu } from "./styles";
 
 import { useAuth } from "../../hooks/auth";
 
@@ -13,7 +13,9 @@ export function Header() {
 
     return (
         <Container>
-            <FiMenu/>
+            <Menu>
+                <FiMenu/>
+            </Menu>
 
             <Logo>
                 <img src={logo} alt="logo do food" />
