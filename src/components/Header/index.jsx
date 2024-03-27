@@ -7,13 +7,13 @@ import { FiMenu } from "react-icons/fi";
 
 import logo from '../../assets/logo.svg'
 
-export function Header() {
+export function Header({ openMenu }) {
 
     const { logout, user } = useAuth();
 
     return (
         <Container>
-            <Menu>
+            <Menu onClick={ () => { openMenu() } }>
                 <FiMenu/>
             </Menu>
 

@@ -10,15 +10,16 @@ import { SideMenu } from "../../components/SideMenu"
 
 import { Container, Content, Flavors } from "./styles"
 
-import { useAuth } from '../../hooks/auth'
-
 import spices from '../../assets/temperos.png';
 
 export function Home() {
     const [categories, setCategories] = useState();
     const [dishes, setDishes] = useState();
+    const [menuOpen, setMenuOpen] = useState(false);
 
-    const { user } = useAuth();
+    function handleOpenMenu() {
+        setMenuOpen(!menuOpen);
+    }
 
     useEffect(() => {
 
@@ -61,12 +62,11 @@ export function Home() {
 
     }, [])
 
-
     return (
         <Container>
-            <Header/>
+            <Header openMenu={handleOpenMenu}/>
 
-            <SideMenu/>
+            <SideMenu isOpen={menuOpen} closeMenu={handleOpenMenu}/>
 
             <Content>
                 

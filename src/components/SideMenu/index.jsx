@@ -4,15 +4,15 @@ import { IoMdClose } from "react-icons/io";
 
 import { Container, Header, Content } from "./styles" 
 
-export function SideMenu() {
+export function SideMenu({ isOpen, closeMenu }) {
 
     const { user } = useAuth();
 
     return (
-        <Container>
+        <Container isOpen={isOpen}>
             <Header>
 
-                <button>
+                <button onClick={() => { closeMenu() }} >
                     <IoMdClose /> 
                     <span>Menu</span>
                 </button>

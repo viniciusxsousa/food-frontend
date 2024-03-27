@@ -1,6 +1,7 @@
 import { styled } from "styled-components";
 
 export const Container = styled.div`
+    display: ${({ isOpen }) => isOpen ? 'block' : 'none'};
     position: absolute;
     
     width: 100%;
