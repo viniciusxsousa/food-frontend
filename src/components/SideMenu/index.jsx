@@ -6,7 +6,7 @@ import { Container, Header, Content } from "./styles"
 
 export function SideMenu({ isOpen, closeMenu }) {
 
-    const { user } = useAuth();
+    const { user, logout } = useAuth();
 
     return (
         <Container isOpen={isOpen}>
@@ -22,7 +22,7 @@ export function SideMenu({ isOpen, closeMenu }) {
             <Content>
                 <ul>
                     { user.rule === 'admin' && <li>Novo Prato</li>}
-                    <li>Sair</li>
+                    <li onClick={() => {logout()}} >Sair</li>
                 </ul>
             </Content>
 

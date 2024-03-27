@@ -9,7 +9,7 @@ import logo from '../../assets/logo.svg'
 
 export function Header({ openMenu }) {
 
-    const { logout, user } = useAuth();
+    const { user } = useAuth();
 
     return (
         <Container>
@@ -25,7 +25,7 @@ export function Header({ openMenu }) {
 
             {
                 user.rule === 'user' &&
-                <Order onClick={logout}>
+                <Order>
                     <CgNotes/>
                     <div>0</div>
                 </Order>
