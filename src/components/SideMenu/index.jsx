@@ -1,4 +1,5 @@
 import { useAuth } from "../../hooks/auth";
+import { useNavigate } from "react-router-dom";
 
 import { IoMdClose } from "react-icons/io";
 
@@ -7,6 +8,7 @@ import { Container, Header, Content } from "./styles"
 export function SideMenu({ isOpen, closeMenu }) {
 
     const { user, logout } = useAuth();
+    const navigate = useNavigate();
 
     return (
         <Container isOpen={isOpen}>
@@ -21,7 +23,7 @@ export function SideMenu({ isOpen, closeMenu }) {
 
             <Content>
                 <ul>
-                    { user.rule === 'admin' && <li>Novo Prato</li>}
+                    { user.rule === 'admin' && <li onClick={() => { navigate('/new') }} >Novo Prato</li>}
                     <li onClick={() => {logout()}} >Sair</li>
                 </ul>
             </Content>
