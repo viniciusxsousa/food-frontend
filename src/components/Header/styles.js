@@ -16,6 +16,12 @@ export const Container = styled.header`
 `
 
 export const Logo = styled.div`
+    ${ ({ rule }) => {
+        if(rule === "admin") {
+            return 'margin-left: auto; margin-right: auto;'
+        }
+    } }
+
     display: flex;
     align-items: flex-start;
     gap: 8px;

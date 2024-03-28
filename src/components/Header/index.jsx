@@ -17,7 +17,7 @@ export function Header({ openMenu }) {
                 <FiMenu/>
             </Menu>
 
-            <Logo>
+            <Logo rule={user.rule}>
                 <img src={logo} alt="logo do food" />
                 <h1>food explorer</h1>
                 { user.rule === 'admin' && <span>admin</span> }
