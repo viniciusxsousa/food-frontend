@@ -9,6 +9,7 @@ import { Input } from '../../components/Input';
 import { Select } from "../../components/Select";
 import { Button } from '../../components/Button'
 import { TextArea } from "../../components/TextArea";
+import { SideMenu } from "../../components/SideMenu";
 import { Footer } from '../../components/Footer'
 import { InputIngredient } from "../../components/InputIngredient";
 
@@ -25,6 +26,8 @@ export function New() {
     const [description, setDescription] = useState();
 
     const [ingredient, setIngredient] = useState();
+
+    const [menuOpen, setMenuOpen] = useState(false);
 
     function handleAddIngredients(ingredient) {
         setIngredients(prevState => [...prevState, ingredient]);
@@ -59,6 +62,10 @@ export function New() {
         }
     }
 
+    function handleOpenMenu() {
+        setMenuOpen(!menuOpen);
+    }
+
     useEffect(() => {
 
         async function searchCategory() {
@@ -83,7 +90,9 @@ export function New() {
 
     return (
         <Container>
-            <Header/>
+            <Header openMenu={handleOpenMenu} />
+
+            <SideMenu isOpen={menuOpen} closeMenu={handleOpenMenu}/>
 
             <Content>
                 <div>
