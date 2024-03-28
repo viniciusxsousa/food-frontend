@@ -23,7 +23,7 @@ export const Content = styled.div`
         align-items: flex-start;
         gap: 24px;
 
-        > a {
+        > p {
             display: flex;
 
             font-size: 16px;

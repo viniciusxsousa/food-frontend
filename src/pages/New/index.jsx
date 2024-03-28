@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 import { api } from "../../services/api";
 
@@ -28,6 +29,8 @@ export function New() {
     const [ingredient, setIngredient] = useState();
 
     const [menuOpen, setMenuOpen] = useState(false);
+
+    const navigate = useNavigate();
 
     function handleAddIngredients(ingredient) {
         setIngredients(prevState => [...prevState, ingredient]);
@@ -66,6 +69,10 @@ export function New() {
         setMenuOpen(!menuOpen);
     }
 
+    function handleBack(){
+        navigate('/')
+    }
+
     useEffect(() => {
 
         async function searchCategory() {
@@ -96,7 +103,7 @@ export function New() {
 
             <Content>
                 <div>
-                    <a href="#"><IoIosArrowBack/> Voltar</a>
+                    <p onClick={handleBack} ><IoIosArrowBack/> Voltar</p>
 
                     <h2>Novo Prato</h2>
 
