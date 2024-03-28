@@ -23,17 +23,19 @@ export function Header({ openMenu }) {
                 { user.rule === 'admin' && <span>admin</span> }
             </Logo>
             
-            {
-                user.rule === 'user' &&
-                <Order>
-                    <CgNotes/>
-                    <div>0</div>
-                </Order>
-            }
+            <div>
+                {
+                    user.rule === 'user' &&
+                    <Order>
+                        <CgNotes/>
+                        <div>0</div>
+                    </Order>
+                }
 
-            <Logout onClick={() => {logout()}}>
-                <FiLogOut/>
-            </Logout>
+                <Logout onClick={() => {logout()}}>
+                    <FiLogOut/>
+                </Logout>
+            </div>
 
         </Container>
     )

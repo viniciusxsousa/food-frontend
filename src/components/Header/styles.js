@@ -13,6 +13,11 @@ export const Container = styled.header`
     > svg {
         font-size: 28px;
     }
+
+    > div:nth-child(3) {
+        display: flex;
+        gap: 1.5rem;
+    }
 `
 
 export const Logo = styled.div`
