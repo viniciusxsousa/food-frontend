@@ -16,6 +16,7 @@ export function Home() {
     const [categories, setCategories] = useState();
     const [dishes, setDishes] = useState();
     const [menuOpen, setMenuOpen] = useState(false);
+    const [searchTerm, setSearchTerm] = useState('');
 
     function handleOpenMenu() {
         setMenuOpen(!menuOpen);
@@ -43,7 +44,7 @@ export function Home() {
 
             try {
 
-                const response = await api.get("/dishes?name&ingredients")
+                const response = await api.get(`/dishes?name=${searchTerm}&ingredients`)
 
                 setDishes(response.data);
 
@@ -60,13 +61,13 @@ export function Home() {
         searchCategories();
         searchDished();
 
-    }, [])
+    }, [searchTerm])
 
     return (
         <Container>
             <Header openMenu={handleOpenMenu}/>
 
-            <SideMenu isOpen={menuOpen} closeMenu={handleOpenMenu}/>
+            <SideMenu isOpen={menuOpen} closeMenu={handleOpenMenu} searchTerm={setSearchTerm}/>
 
             <Content>
                 
