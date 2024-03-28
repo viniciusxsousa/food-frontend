@@ -74,3 +74,14 @@ export const Menu = styled.button`
         display: none;
     }
 `
+
+export const Logout = styled.button`
+    border: none;
+    background-color: transparent;
+    display: none;
+
+    @media screen and (min-width: ${BREAKPOINTS.TABLET}) {
+        display: block;
+        font-size: 2.4rem;
+    }
+`

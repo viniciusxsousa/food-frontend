@@ -1,15 +1,15 @@
-import { Container, Logo, Order, Menu } from "./styles";
+import { Container, Logo, Order, Menu, Logout } from "./styles";
 
 import { useAuth } from "../../hooks/auth";
 
 import { CgNotes } from "react-icons/cg";
-import { FiMenu } from "react-icons/fi";
+import { FiMenu, FiLogOut } from "react-icons/fi";
 
 import logo from '../../assets/logo.svg'
 
 export function Header({ openMenu }) {
 
-    const { user } = useAuth();
+    const { user, logout } = useAuth();
 
     return (
         <Container>
@@ -22,7 +22,7 @@ export function Header({ openMenu }) {
                 <h1>food explorer</h1>
                 { user.rule === 'admin' && <span>admin</span> }
             </Logo>
-
+            
             {
                 user.rule === 'user' &&
                 <Order>
@@ -30,6 +30,10 @@ export function Header({ openMenu }) {
                     <div>0</div>
                 </Order>
             }
+
+            <Logout onClick={() => {logout()}}>
+                <FiLogOut/>
+            </Logout>
 
         </Container>
     )
