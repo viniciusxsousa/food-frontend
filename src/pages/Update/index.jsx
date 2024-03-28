@@ -11,6 +11,7 @@ import { Select } from "../../components/Select";
 import { Button } from '../../components/Button'
 import { TextArea } from "../../components/TextArea";
 import { Footer } from '../../components/Footer'
+import { SideMenu } from "../../components/SideMenu";
 import { InputIngredient } from "../../components/InputIngredient";
 
 import { IoIosArrowBack } from "react-icons/io";
@@ -27,6 +28,8 @@ export function Update() {
     const [categories, setCategories] = useState();
 
     const [ newIngredient, setNewIngredient ] = useState('');
+
+    const [menuOpen, setMenuOpen] = useState(false);
 
     const params = useParams();
     const navigate = useNavigate();
@@ -100,6 +103,10 @@ export function Update() {
 
     }
 
+    function handleOpenMenu() {
+        setMenuOpen(!menuOpen);
+    }
+
     useEffect(() => {
 
         async function searchDished() {
@@ -125,7 +132,9 @@ export function Update() {
 
     return (
         <Container>
-            <Header/>
+            <Header openMenu={handleOpenMenu} />
+
+            <SideMenu isOpen={menuOpen} closeMenu={handleOpenMenu}/>
 
             <Content>
                 <div>
