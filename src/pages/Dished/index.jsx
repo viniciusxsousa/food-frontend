@@ -6,6 +6,7 @@ import { Container, Content, Buttons, Ingredients, Back } from "./styles";
 import { Ingredient} from '../../components/Ingredient'
 import { Header } from '../../components/Header'
 import { Button } from "../../components/Button";
+import { SideMenu } from "../../components/SideMenu";
 
 import { IoIosRemove, IoIosAdd, IoIosArrowBack } from "react-icons/io";
 
@@ -18,12 +19,18 @@ export function Dished() {
     const [dished, setDished] = useState();
     const [ingredients, setIngredients] = useState();
 
+    const [menuOpen, setMenuOpen] = useState(false);
+
     const params = useParams();
     const navigate = useNavigate();
     const { user } = useAuth();
 
     function handleUpdate() {
         navigate(`/update/${params.id}`)
+    }
+
+    function handleOpenMenu() {
+        setMenuOpen(!menuOpen);
     }
 
     useEffect(() => {
@@ -54,7 +61,9 @@ export function Dished() {
 
     return (
         <Container>
-            <Header/>
+            <Header openMenu={handleOpenMenu}/>
+
+            <SideMenu isOpen={menuOpen} closeMenu={handleOpenMenu}/>
 
             <Content>
 
