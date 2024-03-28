@@ -3,7 +3,9 @@ import { useNavigate } from "react-router-dom";
 
 import { IoMdClose } from "react-icons/io";
 
-import { Container, Header, Content } from "./styles" 
+import { Container, Header, Content } from "./styles";
+
+import { Footer } from "../Footer"; 
 
 export function SideMenu({ isOpen, closeMenu }) {
 
@@ -27,6 +29,8 @@ export function SideMenu({ isOpen, closeMenu }) {
                     <li onClick={() => {logout()}} >Sair</li>
                 </ul>
             </Content>
+
+            <Footer />
 
         </Container>
     )

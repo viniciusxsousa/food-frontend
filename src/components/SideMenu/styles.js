@@ -1,7 +1,10 @@
 import { styled } from "styled-components";
 
 export const Container = styled.div`
-    display: ${({ isOpen }) => isOpen ? 'block' : 'none'};
+    display: ${({ isOpen }) => isOpen ? 'grid' : 'none'};
+    grid-template-rows: 114px auto 77px;
+
+
     position: absolute;
     
     width: 100%;
