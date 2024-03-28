@@ -5,6 +5,7 @@ import { IoMdClose } from "react-icons/io";
 
 import { Container, Header, Content } from "./styles";
 
+import { Search } from "../Search";
 import { Footer } from "../Footer"; 
 
 export function SideMenu({ isOpen, closeMenu }) {
@@ -24,6 +25,9 @@ export function SideMenu({ isOpen, closeMenu }) {
             </Header>
 
             <Content>
+
+                <Search  type='text' placeholder='Busque por pratos' />
+
                 <ul>
                     { user.rule === 'admin' && <li onClick={() => { navigate('/new') }} >Novo Prato</li>}
                     <li onClick={() => {logout()}} >Sair</li>
