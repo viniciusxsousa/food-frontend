@@ -83,4 +83,26 @@ export const Flavors = styled.div`
         }
     }
 
+    @media screen and (min-width: ${BREAKPOINTS.DESKTOP}) {
+        margin-top: 80px;
+
+        height: 200px;
+
+        > img {
+            width: 490px;
+            height: 300px;
+
+            top: -92px;
+        }
+
+        > h2, p {
+            padding-left: 350px;
+        }
+
+        >h2 {
+            font-size: 43px;
+            font-weight: 500;
+        }
+    }
+
 `
