@@ -90,11 +90,11 @@ export function Home() {
                         </Section> ))
                     }
 
-                    <Footer/>
 
                 </div>
 
             </Content>
+                    {/* <Footer/> */}
         </Container>
     )
 }

@@ -21,6 +21,11 @@ export const Content = styled.div`
     padding-top: 44px;
 
     overflow-y: scroll;
+
+    @media screen and (min-width: ${BREAKPOINTS.DESKTOP}){
+        width: 1050px;
+        margin: auto;
+    }
 `
 
 export const Flavors = styled.div`
@@ -84,7 +89,8 @@ export const Flavors = styled.div`
     }
 
     @media screen and (min-width: ${BREAKPOINTS.DESKTOP}) {
-        margin-top: 80px;
+        margin: 80px 0px 0px;
+        width: 100%;
 
         height: 200px;
 
