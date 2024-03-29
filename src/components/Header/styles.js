@@ -72,6 +72,16 @@ export const Logo = styled.div`
 
     @media screen and (min-width: ${BREAKPOINTS.DESKTOP}){
         width: 180px;
+
+        transform: translatey(5px);
+
+        flex-wrap: wrap;
+        justify-content: flex-end;
+
+        > span {
+            font-size: 1.4rem;
+            transform: translateY(-10px);
+        }
     }
 `
 
