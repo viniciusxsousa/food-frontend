@@ -71,6 +71,10 @@ export const Order = styled.div`
         font-size: 2.8rem;
     }
 
+    > p {
+        display: none;
+    }
+
     > div {
         height: 20px;
         width: 20px;
@@ -99,6 +103,10 @@ export const Order = styled.div`
 
         background-color: ${({theme}) => theme.COLORS.TOMATO_100};
         cursor: pointer;
+
+        > p {
+            display: block;
+        }
 
         > div {
            position: static;
