@@ -29,7 +29,8 @@ export const Container = styled.header`
         gap: 32px;
 
         > div:nth-child(3) {
-            display: block;
+            display: flex;
+            justify-content: center;
         }
     }
 `
