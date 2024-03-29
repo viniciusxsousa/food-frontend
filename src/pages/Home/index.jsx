@@ -93,6 +93,7 @@ export function Home() {
 
                 </div>
 
+                <Footer/>
             </Content>                  
         </Container>
     )
