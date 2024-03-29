@@ -22,6 +22,10 @@ export const Container = styled.header`
     > div:nth-child(4) {
         display: flex;
         gap: 1.5rem;
+
+        button:nth-child(1) {
+            display: none;
+        }
     }
 
     @media screen and (min-width: ${BREAKPOINTS.DESKTOP}){
@@ -31,6 +35,12 @@ export const Container = styled.header`
         > div:nth-child(3) {
             display: flex;
             justify-content: center;
+        }
+
+        >div:nth-child(4) {
+            button:nth-child(1) {
+                display: block;
+            }
         }
     }
 `
@@ -124,6 +134,18 @@ export const Order = styled.div`
         }
 
     }
+`
+
+export const NewDished = styled.button`
+    width: 180px;
+    height: 46px;
+   
+    border: none;
+    border-radius: 5px;
+    background-color: ${({theme}) => theme.COLORS.TOMATO_100};
+
+    font-size: 1.6rem;
+    font-weight: 500;
 `
 
 export const Menu = styled.button`

@@ -1,6 +1,7 @@
-import { Container, Logo, Order, Menu, Logout } from "./styles";
+import { Container, Logo, Order, Menu, Logout, NewDished } from "./styles";
 
 import { useAuth } from "../../hooks/auth";
+import { useNavigate } from "react-router-dom";
 
 import { CgNotes } from "react-icons/cg";
 import { FiMenu, FiLogOut } from "react-icons/fi";
@@ -12,6 +13,7 @@ import logo from '../../assets/logo.svg'
 export function Header({ openMenu }) {
 
     const { user, logout } = useAuth();
+    const navigate = useNavigate();
 
     return (
         <Container>
@@ -35,6 +37,11 @@ export function Header({ openMenu }) {
                         <p>Pedidos</p>
                         <div>0</div>
                     </Order>
+                }
+
+                {
+                    user.rule === 'admin' && 
+                    <NewDished onClick={() => {navigate('/new')}} >Novo Prato</NewDished>
                 }
 
                 <Logout onClick={() => {logout()}}>
