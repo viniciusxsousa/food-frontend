@@ -15,6 +15,10 @@ export const Container = styled.header`
         font-size: 28px;
     }
 
+    > div:nth-child(3) {
+        display: none;
+    }
+
     > div:nth-child(4) {
         display: flex;
         gap: 1.5rem;
@@ -23,6 +27,10 @@ export const Container = styled.header`
     @media screen and (min-width: ${BREAKPOINTS.DESKTOP}){
         padding: 24px 123px 24px;
         gap: 32px;
+
+        > div:nth-child(3) {
+            display: block;
+        }
     }
 `
 
