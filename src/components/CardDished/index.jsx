@@ -33,7 +33,7 @@ export function CardDished({ dished }) {
             <Price>R$ {dished.price}</Price>
 
             {  user.rule === 'user' && 
-              <>
+              <div>
                     <Buttons>
                         <IoIosRemove/>
                         <span>01</span>
@@ -41,7 +41,7 @@ export function CardDished({ dished }) {
                     </Buttons>
         
                     <Button title="Incluir"/>
-                </>
+                </div>
             }
 
         </Container>

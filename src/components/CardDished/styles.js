@@ -2,6 +2,8 @@ import styled from 'styled-components';
 
 import { Link } from 'react-router-dom';  
 
+import { BREAKPOINTS } from '../../styles/breakpoints'
+
 export const Container = styled.article`
     width: 210px;
     max-height: 292px;
@@ -35,16 +37,39 @@ export const Container = styled.article`
 
         margin-top: -30px;
     }
+
+    > div {
+        display: flex;
+        gap: 18px;
+    }
+
+    @media screen and (min-width: ${BREAKPOINTS.DESKTOP}){
+        width: 304px;
+        max-height: 462px;
+
+        > img {
+            width: 176px;
+            height: 176px;
+        }
+    }
 `
 
 export const Dished = styled(Link)`
-        font-size: 1.4rem;
-        font-weight: 500;
+    font-size: 1.4rem;
+    font-weight: 500;
+
+    @media screen and (min-width: ${BREAKPOINTS.DESKTOP}) {
+        font-size: 2.4rem;
+    }
 `
 
 export const Price = styled.p`
     color: ${({theme}) => theme.COLORS.CAKE_200};
     font-size: 1.6rem;
+
+    @media screen and (min-width: ${BREAKPOINTS.DESKTOP}) {
+        font-size: 3.2rem;
+    }
 `
 
 export const Buttons = styled.div`
@@ -59,5 +84,12 @@ export const Buttons = styled.div`
 
     > span {
         font-size: 1.6rem;
+    }
+
+    @media screen and (min-width: ${BREAKPOINTS.DESKTOP}) {
+        
+        > span {
+            font-size: 2rem;
+        }
     }
 `
