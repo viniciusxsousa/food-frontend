@@ -1,7 +1,5 @@
 import styled from 'styled-components'
 
-import { Link } from 'react-router-dom'
-
 import { BREAKPOINTS } from '../../styles/breakpoints'
 
 export const Container = styled.div`
