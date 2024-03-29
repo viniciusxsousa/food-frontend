@@ -60,4 +60,27 @@ export const Flavors = styled.div`
         }
     }
 
+    @media screen and (min-width: ${BREAKPOINTS.TABLET}) {
+        margin: auto;
+        height: 14.9rem;
+
+        > img {
+            height: 178.8px;
+            width: 229.2px;
+            top: -30px
+        }
+
+        > h2, p {
+            padding-left: 70px;
+        }
+
+        > h2 {
+            font-size: 2rem;
+        }
+
+        > p {
+            font-size: 1.6rem;
+        }
+    }
+
 `
