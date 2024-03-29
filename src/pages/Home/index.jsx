@@ -93,8 +93,7 @@ export function Home() {
 
                 </div>
 
-            </Content>
-                    {/* <Footer/> */}
+            </Content>                  
         </Container>
     )
 }

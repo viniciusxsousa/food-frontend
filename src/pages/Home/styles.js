@@ -6,7 +6,7 @@ export const Container = styled.div`
     width: 100%;
     height: 100vh;
 
-    display: grid;
+    display: grid; 
     grid-template-rows: 114px auto;
     grid-template-areas: 
     'header'
@@ -19,10 +19,15 @@ export const Content = styled.div`
     padding-top: 44px;
 
     overflow-y: scroll;
+    
 
     @media screen and (min-width: ${BREAKPOINTS.DESKTOP}){
-        width: 1050px;
-        margin: auto;
+
+        > div {
+            width: 1050px;
+            margin-left: auto;
+            margin-right: auto;
+        }
     }
 `
 
