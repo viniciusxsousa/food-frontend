@@ -48,6 +48,8 @@ export const Flavors = styled.div`
 
     > img {
         display: none;
+        height: 155px;
+        width: 180px;
     }
 
     @media screen and (min-width: ${BREAKPOINTS.MOBILEL}){
