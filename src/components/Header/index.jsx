@@ -5,6 +5,8 @@ import { useAuth } from "../../hooks/auth";
 import { CgNotes } from "react-icons/cg";
 import { FiMenu, FiLogOut } from "react-icons/fi";
 
+import { Search } from '../Search'
+
 import logo from '../../assets/logo.svg'
 
 export function Header({ openMenu }) {
@@ -22,12 +24,15 @@ export function Header({ openMenu }) {
                 <h1>food explorer</h1>
                 { user.rule === 'admin' && <span>admin</span> }
             </Logo>
+
+            <Search type='text' placeholder='Pesquise por pratos' />
             
             <div>
                 {
                     user.rule === 'user' &&
                     <Order>
                         <CgNotes/>
+                        <p>Pedidos</p>
                         <div>0</div>
                     </Order>
                 }

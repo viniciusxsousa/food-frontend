@@ -8,15 +8,21 @@ export const Container = styled.header`
     background-color: ${({theme}) => theme.COLORS.DARK_600};
     display: flex;
     justify-content: space-between;
+    align-items: center;
     grid-area: header;
 
     > svg {
         font-size: 28px;
     }
 
-    > div:nth-child(3) {
+    > div:nth-child(4) {
         display: flex;
         gap: 1.5rem;
+    }
+
+    @media screen and (min-width: ${BREAKPOINTS.DESKTOP}){
+        padding: 24px 123px 24px;
+        gap: 32px;
     }
 `
 
@@ -44,6 +50,10 @@ export const Logo = styled.div`
        font-size: 1rem;
        transform: translateY(10px);
     }
+
+    @media screen and (min-width: ${BREAKPOINTS.DESKTOP}){
+        width: 180px;
+    }
 `
 
 export const Order = styled.div`
@@ -64,6 +74,38 @@ export const Order = styled.div`
         background-color: ${({theme}) => theme.COLORS.TOMATO_200};
         top: -5px;
         right: -5px;
+    }
+
+    @media screen and (min-width: ${BREAKPOINTS.DESKTOP}) {
+        position: static;
+        width: 180px;
+        height: 46px;
+        border-radius: 5px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 4px;
+
+        padding: 12px 32px;
+
+        background-color: ${({theme}) => theme.COLORS.TOMATO_100};
+        cursor: pointer;
+
+        > div {
+           position: static;
+
+           background-color: transparent;
+
+           &::before {
+            content: '(';
+           }
+
+           &::after {
+            content: ')';
+           }
+        }
+
     }
 `
 

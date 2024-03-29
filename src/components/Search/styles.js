@@ -1,4 +1,5 @@
 import { styled } from "styled-components";
+import { BREAKPOINTS } from "../../styles/breakpoints";
 
 export const Container = styled.div`
     width: 100%;
@@ -37,5 +38,10 @@ export const Container = styled.div`
         &::placeholder {
             color: ${ ({theme}) => theme.COLORS.LIGHT_500};
         }
+    }
+
+    @media screen and (min-width: ${BREAKPOINTS.DESKTOP}) {
+        width: 581px;
+        margin-bottom: 0px;
     }
 `
