@@ -11,7 +11,7 @@ export const Container = styled.div`
     align-items: center;
     justify-content: center;
 
-    > div {
+    > div:nth-child(1) {
         display: flex;
         gap: 10px;
 
@@ -22,7 +22,7 @@ export const Container = styled.div`
         }
     }
 
-    > form {
+    form {
         width: 100%;
 
         label {
@@ -45,8 +45,11 @@ export const Container = styled.div`
         }
     }
 
-    > a {
+    a {
+        display: block;
         color: ${({theme}) => theme.COLORS.LIGHT_100};
         font-size: 14px;
+        margin: auto;
+        text-align: center;
     }
 `

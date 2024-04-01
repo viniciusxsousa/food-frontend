@@ -31,27 +31,30 @@ export function SignIn() {
                 <h1>food explorer</h1>
             </div>
 
-            <form>
-                <label htmlFor="email">E-mail</label>
-                <Input 
-                    id='email' 
-                    type='text' 
-                    placeholder='Digite seu e-mail' 
-                    onChange={e => setEmail(e.target.value)}
-                />
+            <div>
+                <form>
+                    <label htmlFor="email">E-mail</label>
+                    <Input 
+                        id='email' 
+                        type='text' 
+                        placeholder='Digite seu e-mail' 
+                        onChange={e => setEmail(e.target.value)}
+                    />
 
-                <label htmlFor="password">Senha</label>
-                <Input 
-                    id='password' 
-                    type='password' 
-                    placeholder='Digite sua senha' 
-                    onChange={e => setPassword(e.target.value)}
-                />
+                    <label htmlFor="password">Senha</label>
+                    <Input 
+                        id='password' 
+                        type='password' 
+                        placeholder='Digite sua senha' 
+                        onChange={e => setPassword(e.target.value)}
+                    />
 
-                <Button title='Entrar' onClick={handleSignIn}/>
-            </form>
+                    <Button title='Entrar' onClick={handleSignIn}/>
+                </form>
 
-            <Link to='/signup'>Criar uma conta</Link>
+                <Link to='/signup'>Criar uma conta</Link>
+            </div>
+
 
         </Container>
     )
