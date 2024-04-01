@@ -24,6 +24,12 @@ export const Container = styled.div`
         }
     }
 
+    > div:nth-child(2) {
+        p {
+            display: none;
+        }
+    }
+
     form {
         width: 100%;
 
@@ -64,4 +70,31 @@ export const Container = styled.div`
             background-color: ${({theme}) => theme.COLORS.DARK_700};
         }            
     }
+
+    @media screen and (min-width: ${BREAKPOINTS.DESKTOP}) {
+        flex-direction: row;
+        gap: 300px;
+
+        > div:nth-child(1) {
+
+            img {
+              width: 50px;
+            }
+
+            h1 {
+                font-size: 4.2rem;
+            }
+
+        }
+
+        >div:nth-child(2) {
+            p{
+                display: block;
+                font-size: 3.2rem;
+                font-weight: 500;
+                text-align: center;
+                margin-bottom: 32px;
+            }
+        }
+    };
 `

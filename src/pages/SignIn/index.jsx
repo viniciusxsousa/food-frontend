@@ -32,6 +32,9 @@ export function SignIn() {
             </div>
 
             <div>
+
+                <p>Faça login</p>
+
                 <form>
                     <label htmlFor="email">E-mail</label>
                     <Input 
