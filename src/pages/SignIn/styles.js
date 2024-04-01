@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 
+import { BREAKPOINTS } from '../../styles/breakpoints';
+
 export const Container = styled.div`
     width: 100%;
     height: 100vh;
@@ -51,5 +53,15 @@ export const Container = styled.div`
         font-size: 14px;
         margin: auto;
         text-align: center;
+    }
+
+    @media screen and (min-width: ${BREAKPOINTS.TABLET}) {
+        > div:nth-child(2) {
+            max-width: 400px;
+            padding: 45px 50px;
+            border-radius: 16px;
+
+            background-color: ${({theme}) => theme.COLORS.DARK_700};
+        }            
     }
 `
