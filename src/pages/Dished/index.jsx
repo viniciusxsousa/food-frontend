@@ -69,36 +69,41 @@ export function Dished() {
 
                 <div>
 
-                    <Back to='/'><IoIosArrowBack/> Voltar</Back>
+                    <div>
+                        <Back to='/'><IoIosArrowBack/> Voltar</Back>
 
-                    <img src={mask} alt="Foto do prato" />
+                        <img src={mask} alt="Foto do prato" />
+                    </div>
 
-                    <h2>{dished ? dished.name : 'Sem nome'}</h2>
+                    <div>
 
-                    <p>{dished ? dished.description: 'Sem descrição'}</p>
+                        <h2>{dished ? dished.name : 'Sem nome'}</h2>
 
-                    <Ingredients>
-                        { ingredients && ingredients.map( ingredient => 
-                            <Ingredient 
-                                key={ingredient.id} 
-                                title={ingredient.name} 
-                            /> 
-                        )}
-                    </Ingredients>
+                        <p>{dished ? dished.description: 'Sem descrição'}</p>
 
-                    {  user.rule === 'user' &&
-                        <Buttons>
-                            <IoIosRemove/>
-                            <span>01</span>
-                            <IoIosAdd/>
-                            <Button title='pedir'/>
-                        </Buttons>
-                    }
+                        <Ingredients>
+                            { ingredients && ingredients.map( ingredient => 
+                                <Ingredient 
+                                    key={ingredient.id} 
+                                    title={ingredient.name} 
+                                /> 
+                            )}
+                        </Ingredients>
 
-                    {
-                        user.rule === 'admin' && <Button  title='Editar prato' onClick={handleUpdate}/>
-                    }
+                        {  user.rule === 'user' &&
+                            <Buttons>
+                                <IoIosRemove/>
+                                <span>01</span>
+                                <IoIosAdd/>
+                                <Button title='pedir'/>
+                            </Buttons>
+                        }
 
+                        {
+                            user.rule === 'admin' && <Button  title='Editar prato' onClick={handleUpdate}/>
+                        }
+
+                    </div>
 
                 </div>
 

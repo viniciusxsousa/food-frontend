@@ -29,13 +29,23 @@ export const Content = styled.div`
       }
    }
 
-   > div img {
+   > div div {
+      width: 100%;
+   }
+
+   > div div:nth-child(1) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+   }
+
+   > div div img {
      width: 244px;
      height: 244px;
      margin: 16px 0;
    }
 
-   > div h2 {
+   > div div h2 {
         font-size: 27px;
         font-weight: 500;
         text-align: center;
@@ -43,7 +53,7 @@ export const Content = styled.div`
         margin-bottom: 24px;
    }
 
-   > div p:nth-child(4) {
+   > div div p {
     text-align: center;
     font-size: 16px;
     font-weight: 400;
