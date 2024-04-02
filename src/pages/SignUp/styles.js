@@ -26,6 +26,10 @@ export const Container = styled.div`
 
     > div:nth-child(2) {
 
+        p {
+            display: none;
+        }
+
         a {
             display: block;
             text-align: center;
@@ -65,6 +69,33 @@ export const Container = styled.div`
             background-color: ${({theme}) => theme.COLORS.DARK_700};
             padding: 45px;
             border-radius: 16px;
+        }
+
+    }
+
+    @media screen and (min-width: ${BREAKPOINTS.DESKTOP}) {
+        flex-direction: row;
+        gap: 300px;
+
+        > div:nth-child(1) {
+            img {
+                width: 50px;
+            }
+
+            h1 {
+                font-size: 4.2rem;
+            }
+        }
+        
+        > div:nth-child(2) {
+            width: 400px;
+
+            p {
+                display: block;
+                font-size: 3.0rem;
+                text-align: center;
+                margin-bottom: 30px;
+            }
         }
 
     }

@@ -49,6 +49,8 @@ export function SignUp() {
 
             <div>
 
+                <p>Crie sua conta</p>
+
                 <form>
                     <label htmlFor="name">Nome</label>
                     <Input 
