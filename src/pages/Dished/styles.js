@@ -2,6 +2,8 @@ import styled from 'styled-components';
 
 import { Link } from 'react-router-dom';
 
+import { BREAKPOINTS } from '../../styles/breakpoints';
+
 export const Container = styled.div`
     width: 100%;
     height: 100vh;
@@ -59,6 +61,10 @@ export const Content = styled.div`
     font-weight: 400;
 
     margin-bottom: 48px;
+   }
+
+   @media screen and (min-width: ${BREAKPOINTS.TABLET}){
+      padding: 16px 100px 33px;
    }
 `
 
