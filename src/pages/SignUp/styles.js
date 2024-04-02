@@ -1,5 +1,7 @@
 import styled from "styled-components"
 
+import { BREAKPOINTS } from "../../styles/breakpoints"
+
 export const Container = styled.div`
     width: 100%;
     height: 100vh;
@@ -11,7 +13,7 @@ export const Container = styled.div`
     align-items: center;
     justify-content: center;
 
-    > div {
+    > div:nth-child(1) {
         display: flex;
         gap: 14px;
 
@@ -22,7 +24,15 @@ export const Container = styled.div`
         }
     }
 
-    > form {
+    > div:nth-child(2) {
+
+        a {
+            display: block;
+            text-align: center;
+        }
+    }
+
+    form {
         width: 100%;
 
         label {
@@ -43,5 +53,19 @@ export const Container = styled.div`
         button {
             margin-bottom: 18px;
         }
+    }
+
+    @media screen and (min-width: ${ BREAKPOINTS.TABLET } ) {
+
+        > div:nth-child(1) {
+            margin-bottom: 20px;
+        }
+        
+        > div:nth-child(2) {
+            background-color: ${({theme}) => theme.COLORS.DARK_700};
+            padding: 45px;
+            border-radius: 16px;
+        }
+
     }
 `

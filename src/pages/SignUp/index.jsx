@@ -47,36 +47,41 @@ export function SignUp() {
                 <h1>food explorer</h1>
             </div>
 
-            <form>
-                <label htmlFor="name">Nome</label>
-                <Input 
-                    id='name'
-                    type='text'
-                    placeholder='Digite seu nome'
-                    onChange={ e => setName(e.target.value)}
-                />
+            <div>
 
-                <label htmlFor="email">E-mail</label>
-                <Input 
-                    id='email'
-                    type='text'
-                    placeholder='Digite seu e-mail'
-                    onChange={ e => setEmail(e.target.value)}
-                />
+                <form>
+                    <label htmlFor="name">Nome</label>
+                    <Input 
+                        id='name'
+                        type='text'
+                        placeholder='Digite seu nome'
+                        onChange={ e => setName(e.target.value)}
+                    />
 
-                <label htmlFor="password">Senha</label>
-                <Input
-                    id='password'
-                    type='password'
-                    placeholder='Defina a sua senha'
-                    onChange={ e => setPassword(e.target.value)}  
-                />
+                    <label htmlFor="email">E-mail</label>
+                    <Input 
+                        id='email'
+                        type='text'
+                        placeholder='Digite seu e-mail'
+                        onChange={ e => setEmail(e.target.value)}
+                    />
 
-            <Button title='Criar conta' onClick={handleSignUp}/>
-            </form>
+                    <label htmlFor="password">Senha</label>
+                    <Input
+                        id='password'
+                        type='password'
+                        placeholder='Defina a sua senha'
+                        onChange={ e => setPassword(e.target.value)}  
+                    />
 
-            
-            <Link to='/'>Já tenho uma conta</Link>
+                <Button title='Criar conta' onClick={handleSignUp}/>
+                </form>
+
+                
+                <Link to='/'>Já tenho uma conta</Link>
+
+            </div>
+
 
         </Container>
     )
