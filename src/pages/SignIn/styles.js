@@ -88,6 +88,8 @@ export const Container = styled.div`
         }
 
         >div:nth-child(2) {
+            width: 700px;
+
             p{
                 display: block;
                 font-size: 3.2rem;
