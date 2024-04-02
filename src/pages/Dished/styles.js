@@ -17,6 +17,18 @@ export const Content = styled.div`
    grid-area: content;
    padding: 16px 36px 33px;
 
+   > div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      a { 
+         align-self: start;
+         font-size: 2.4rem;
+         margin-top: 20px;
+      }
+   }
+
    > div img {
      width: 244px;
      height: 244px;
@@ -24,7 +36,7 @@ export const Content = styled.div`
    }
 
    > div h2 {
-        font-size: 24px;
+        font-size: 27px;
         font-weight: 500;
         text-align: center;
         
@@ -33,7 +45,7 @@ export const Content = styled.div`
 
    > div p:nth-child(4) {
     text-align: center;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 400;
 
     margin-bottom: 48px;
