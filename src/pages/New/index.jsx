@@ -109,62 +109,76 @@ export function New() {
 
                     <form>
 
-                        <label htmlFor="image">Imagem do prato</label>
-                        <Input icon={MdFileUpload} id='image' type='file'/>
+                        <div>
+                            <label htmlFor="image">Imagem do prato</label>
+                            <Input icon={MdFileUpload} id='image' type='file'/>
+                        </div>
 
-                        <label htmlFor="name">Nome</label>
-                        <Input 
-                            value={name}
-                            type='text' 
-                            placeholder='Ex: Lasanha'  
-                            onChange={ e => setName(e.target.value)}
-                        />
-
-                        <label htmlFor="category">Categoria</label>
-                        <Select id='category' onChange={e => setCategory(e.target.value)}>
-                            {
-                                categories && categories.map( category => 
-                                    <option key={category.id} value={category.id}> 
-                                        {category.name} 
-                                    </option>
-                                )
-                            }
-                        </Select>
-
-                        <label htmlFor="ingredient">Ingredientes</label>
-                        <Ingredients>
-                            { ingredients && ingredients.map( item => 
-                                <InputIngredient
-                                    value={item}
-                                    onClick={() => handleRemoveIngredietns(item)}
-                                />    
-                            )}
-                            <InputIngredient 
-                                isNew 
-                                value={ingredient}
-                                placeholder='Adicionar'
-                                onChange={ e => setIngredient(e.target.value) } 
-                                onClick={() => {handleAddIngredients(ingredient)}}
+                        <div>
+                            <label htmlFor="name">Nome</label>
+                            <Input 
+                                value={name}
+                                type='text' 
+                                placeholder='Ex: Lasanha'  
+                                onChange={ e => setName(e.target.value)}
                             />
-                        </Ingredients>
+                        </div>
 
-                        <label htmlFor="price">Preço</label>
-                        <Input 
-                            type='number' 
-                            placeholder="R$ 00,00" 
-                            value={price}
-                            onChange={ e => setPrice(e.target.value) }
-                        />
+                        <div>
+                            <label htmlFor="category">Categoria</label>
+                            <Select id='category' onChange={e => setCategory(e.target.value)}>
+                                {
+                                    categories && categories.map( category => 
+                                        <option key={category.id} value={category.id}> 
+                                            {category.name} 
+                                        </option>
+                                    )
+                                }
+                            </Select>
+                        </div>
 
-                        <label htmlFor="description">Descrição</label>
+                        <div>
+
+                            <label htmlFor="ingredient">Ingredientes</label>
+                            <Ingredients>
+                                { ingredients && ingredients.map( item => 
+                                    <InputIngredient
+                                        value={item}
+                                        onClick={() => handleRemoveIngredietns(item)}
+                                    />    
+                                )}
+                                <InputIngredient 
+                                    isNew 
+                                    value={ingredient}
+                                    placeholder='Adicionar'
+                                    onChange={ e => setIngredient(e.target.value) } 
+                                    onClick={() => {handleAddIngredients(ingredient)}}
+                                />
+                            </Ingredients>
+
+                        </div>
+
+                        <div>
+                            <label htmlFor="price">Preço</label>
+                            <Input 
+                                type='number' 
+                                placeholder="R$ 00,00" 
+                                value={price}
+                                onChange={ e => setPrice(e.target.value) }
+                            />
+                        </div>
                         
-                        <TextArea
-                            value={description}
-                            onChange={ e => setDescription(e.target.value) }
-                        >
-                            Fale brevemente sobre o prato, seus ingredientes e composição
-                        </TextArea>
-
+                        <div>
+                            <label htmlFor="description">Descrição</label>
+                            
+                            <TextArea
+                                value={description}
+                                onChange={ e => setDescription(e.target.value) }
+                            >
+                                Fale brevemente sobre o prato, seus ingredientes e composição
+                            </TextArea>
+                        </div>
+                                    
                         <Button 
                             title="Salvar alteração"
                             onClick={handleCreateDished}
