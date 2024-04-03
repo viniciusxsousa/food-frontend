@@ -126,6 +126,14 @@ export const Buttons = styled.div`
    > svg {
     font-size: 60px;
    }
+
+   @media screen and (min-width: ${BREAKPOINTS.DESKTOP}) {
+      
+      span {
+         font-size: 20px;
+      }
+
+   }
 `
 
 export const Ingredients = styled.div`
