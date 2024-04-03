@@ -33,9 +33,9 @@ export const Container = styled.div`
         }
     }
 
-    @media screen and (min-width: ${BREAKPOINTS.DESKTOP}){
+/*     @media screen and (min-width: ${BREAKPOINTS.DESKTOP}){
         background-color: transparent;
         border: 1px solid ${({theme}) => theme.COLORS.LIGHT_100};
         border-radius: 5px;
-    }
+    } */
 `
