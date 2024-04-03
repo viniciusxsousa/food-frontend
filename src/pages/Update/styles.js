@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import { BREAKPOINTS } from '../../styles/breakpoints';
+
 export const Container = styled.div`
     width: 100%;
     height: 100vh;
@@ -70,6 +72,52 @@ export const Content = styled.div`
 
             > button {
                 margin-bottom: 53px;
+            }
+
+        }
+
+        @media screen and (min-width: ${BREAKPOINTS.DESKTOP}) {
+            padding: 40px 123px;
+
+            > form {
+                display: grid;
+                grid-template-columns: auto auto auto;
+                grid-template-rows: auto auto auto auto;
+                grid-template-areas: 
+                'image        name           category'
+                'ingredient   ingredient     price'
+                'description  description    description'
+                '.            .              button';
+                grid-gap: 1.5rem 3rem;
+
+                div:nth-child(1) {
+                    grid-area: image;
+                }
+
+                div:nth-child(2) {
+                    grid-area: name;
+                }
+
+                div:nth-child(3) {
+                    grid-area: category;
+                }
+
+                div:nth-child(4) {
+                    grid-area: ingredient;
+                }
+
+                div:nth-child(5) {
+                    grid-area: price;
+                }
+
+                div:nth-child(6) {
+                    grid-area: description;
+                }
+
+                div:nth-child(7) {
+                    grid-area: button;
+                }
+
             }
         }
     }

@@ -144,66 +144,79 @@ export function Update() {
 
                     <form>
 
-                        <label htmlFor="image">Imagem do prato</label>
-                        <Input icon={MdFileUpload} id='image' type='file'/>
+                        <div>
+                            <label htmlFor="image">Imagem do prato</label>
+                            <Input icon={MdFileUpload} id='image' type='file'/>
+                        </div>
 
-                        <label htmlFor="name">Nome</label>
-                        <Input 
-                            type='text'
-                            placeholder='Ex: Lasanha'  
-                            value={name} 
-                            onChange={e => setName(e.target.value)}
-                        />
-
-                        <label htmlFor="category">Categoria</label>
-                        <Select id='category' onChange={e => setDishedCategory(e.target.value)} >
-                            { categories && categories.map( category => 
-                                    category.id === dishedCategory ?  
-                                    (<option selected key={category.id} value={category.id}>{category.name}</option>) : (<option key={category.id} value={category.id}>{category.name}</option>)
-                                )
-                            }
-                        </Select>
-
-                        <label htmlFor="ingredient">Ingredientes</label>
-                        <Ingredients>
-                            {
-                               ingredients && ingredients.map( ingredient => 
-                                    <InputIngredient 
-                                        key={ingredient.id} 
-                                        value={ingredient.name}
-                                        onClick={() => handleRemoveIngredient(ingredient.id)}
-                                    />)
-                            }
-                            <InputIngredient 
-                                isNew 
-                                placeholder='Adicionar'
-                                value={newIngredient}
-                                onChange={e => setNewIngredient(e.target.value)}
-                                onClick={handleAddIngredient}
+                        <div>
+                            <label htmlFor="name">Nome</label>
+                            <Input 
+                                type='text'
+                                placeholder='Ex: Lasanha'  
+                                value={name} 
+                                onChange={e => setName(e.target.value)}
                             />
-                        </Ingredients>
+                        </div>
 
-                        <label htmlFor="price">Preço</label>
-                        <Input 
-                            type='number' 
-                            placeholder="R$ 00,00"  
-                            value={price}
-                            onChange={e => setPrice(parseFloat(e.target.value))}
-                        />
+                        <div>
+                            <label htmlFor="category">Categoria</label>
+                            <Select id='category' onChange={e => setDishedCategory(e.target.value)} >
+                                { categories && categories.map( category => 
+                                        category.id === dishedCategory ?  
+                                        (<option selected key={category.id} value={category.id}>{category.name}</option>) : (<option key={category.id} value={category.id}>{category.name}</option>)
+                                    )
+                                }
+                            </Select>
+                        </div>
 
-                        <label htmlFor="description">Descrição</label>
-                        
-                        <TextArea 
-                            value={description}
-                            onChange={e => setDescription(e.target.value)}
-                        >
-                        </TextArea>
+                        <div>
+                            <label htmlFor="ingredient">Ingredientes</label>
+                            <Ingredients>
+                                {
+                                ingredients && ingredients.map( ingredient => 
+                                        <InputIngredient 
+                                            key={ingredient.id} 
+                                            value={ingredient.name}
+                                            onClick={() => handleRemoveIngredient(ingredient.id)}
+                                        />)
+                                }
+                                <InputIngredient 
+                                    isNew 
+                                    placeholder='Adicionar'
+                                    value={newIngredient}
+                                    onChange={e => setNewIngredient(e.target.value)}
+                                    onClick={handleAddIngredient}
+                                />
+                            </Ingredients>
+                        </div>
 
-                        <Buttons>
-                            <Button dark title="Excluir prato" onClick={handleDeleteDished} />
-                            <Button title='Salvar' onClick={handleUpdate}/>
-                        </Buttons>
+                        <div>
+                            <label htmlFor="price">Preço</label>
+                            <Input 
+                                type='number' 
+                                placeholder="R$ 00,00"  
+                                value={price}
+                                onChange={e => setPrice(parseFloat(e.target.value))}
+                            />
+                        </div>
 
+                        <div>
+                            <label htmlFor="description">Descrição</label>
+                            
+                            <TextArea 
+                                value={description}
+                                onChange={e => setDescription(e.target.value)}
+                            >
+                            </TextArea>
+                        </div>
+
+                        <div>
+                            <Buttons>
+                                <Button dark title="Excluir prato" onClick={handleDeleteDished} />
+                                <Button title='Salvar' onClick={handleUpdate}/>
+                            </Buttons>
+                        </div>
                     </form>
                 </div>
 
