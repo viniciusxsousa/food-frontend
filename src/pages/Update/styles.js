@@ -79,6 +79,18 @@ export const Content = styled.div`
         @media screen and (min-width: ${BREAKPOINTS.DESKTOP}) {
             padding: 40px 123px;
 
+            > p {
+                font-size: 2.4rem;
+
+                svg {
+                    font-size: 3rem;
+                }
+            }
+
+            > h2 {
+                font-size: 3.2rem;
+            }
+
             > form {
                 display: grid;
                 grid-template-columns: auto auto auto;
