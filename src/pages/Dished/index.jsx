@@ -7,6 +7,7 @@ import { Ingredient} from '../../components/Ingredient'
 import { Header } from '../../components/Header'
 import { Button } from "../../components/Button";
 import { SideMenu } from "../../components/SideMenu";
+import { Footer } from "../../components/Footer";
 
 import { IoIosRemove, IoIosAdd, IoIosArrowBack } from "react-icons/io";
 
@@ -108,6 +109,8 @@ export function Dished() {
                 </div>
 
             </Content>
+
+            <Footer/>
         </Container>
     )
 }
