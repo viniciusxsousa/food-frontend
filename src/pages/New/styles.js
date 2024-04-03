@@ -34,6 +34,14 @@ export const Content = styled.div`
             svg {
                 font-size: 24px;
             }
+
+            @media screen and (min-width: ${BREAKPOINTS.DESKTOP}) {
+                font-size: 2.4rem;
+
+                svg {
+                    font-size: 3.2rem;
+                }
+            }
         }
 
         > form {
@@ -76,6 +84,10 @@ export const Content = styled.div`
 
         @media screen and (min-width: ${BREAKPOINTS.DESKTOP}) {
             padding: 40px 123px;
+
+            h2 {
+                font-size: 3.2rem;
+            }
 
             form {
                 display: grid;
