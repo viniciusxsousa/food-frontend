@@ -98,7 +98,7 @@ export const Content = styled.div`
                 'ingredient   ingredient     price'
                 'description  description    description'
                 '.            .              button';
-                grid-gap: 1.5rem;
+                grid-gap: 1.5rem 3rem;
 
                 div:nth-child(1) {
                    grid-area: image;
