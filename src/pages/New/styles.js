@@ -52,17 +52,17 @@ export const Content = styled.div`
                 color: ${({theme}) => theme.COLORS.LIGHT_400};
             }
 
-            div {
+            div div {
                 margin: 10px 0 16px;
             }
 
-            > div:nth-child(2){
+            > div:nth-child(1) div{
                 position: relative;
 
                 &::after {
                     content: 'selecione imagem';
                     position: absolute;
-                    top: 10px;
+                    top: 15px;
 
                     margin-left: 10px;
                 }
