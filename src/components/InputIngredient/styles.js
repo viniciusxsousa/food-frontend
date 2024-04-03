@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 
+import { BREAKPOINTS } from '../../styles/breakpoints'
+
 export const Container = styled.div`
     width: 118px;
     height: 32px;
@@ -26,6 +28,16 @@ export const Container = styled.div`
     > svg {
         margin-right: 10px;
         font-size: 18px;
+    }
+
+    @media screen and (min-width: ${BREAKPOINTS.DESKTOP}) {
+
+        width: 150px;
+        
+        > input {
+            font-size: 16px;
+        }
+
     }
 
 `
