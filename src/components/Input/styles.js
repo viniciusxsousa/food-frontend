@@ -33,9 +33,21 @@ export const Container = styled.div`
         }
     }
 
-/*     @media screen and (min-width: ${BREAKPOINTS.DESKTOP}){
-        background-color: transparent;
+
+
+     @media screen and (min-width: ${BREAKPOINTS.DESKTOP}){
+        /*background-color: transparent;
         border: 1px solid ${({theme}) => theme.COLORS.LIGHT_100};
-        border-radius: 5px;
-    } */
+        border-radius: 5px; */
+
+        > input {
+            font-size: 16px;
+        }
+
+        > input {
+            &::placeholder {
+                font-size: 16px;
+            }
+        }
+    }
 `
