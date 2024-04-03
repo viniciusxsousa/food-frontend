@@ -39,4 +39,10 @@ export const Container = styled.footer`
             font-size: 1.2rem;
         }
     }
+
+    @media screen and (min-width: ${BREAKPOINTS.DESKTOP}) {
+        justify-content: space-between;
+        padding-left: 123px;
+        padding-right: 123px;
+    }
 `
