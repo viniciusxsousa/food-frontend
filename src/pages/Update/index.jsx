@@ -145,8 +145,9 @@ export function Update() {
                     <form>
 
                         <div>
-                            <label htmlFor="image">Imagem do prato</label>
-                            <Input icon={MdFileUpload} id='image' type='file'/>
+                            <label>Imagem do prato
+                                 <Input icon={MdFileUpload} type='file'/>
+                            </label>
                         </div>
 
                         <div>

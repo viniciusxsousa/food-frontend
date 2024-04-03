@@ -50,7 +50,7 @@ export const Content = styled.div`
                 margin: 10px 0 16px;
             }
 
-            > div:nth-child(2){
+            > div:nth-child(1) div{
                 position: relative;
 
                 &::after {
