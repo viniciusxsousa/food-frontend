@@ -66,6 +66,46 @@ export const Content = styled.div`
    @media screen and (min-width: ${BREAKPOINTS.TABLET}){
       padding: 16px 100px 33px;
    }
+
+   @media screen and (min-width: ${BREAKPOINTS.DESKTOP}) {
+      
+      > div {
+         flex-direction: row;
+
+         div:nth-child(1) {
+
+            a {
+               margin-left: 7rem;
+            }
+
+            img {
+               width: 390px;
+               height: 390px;
+            }
+         }
+
+         div:nth-child(2) {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+
+            h2 {
+               font-size: 40px;
+            }
+
+            p {
+               font-size: 24px;
+            }
+
+            button {
+               width: 130px;
+            }
+
+         }
+
+      }
+
+   }
 `
 
 export const Back = styled(Link)`
@@ -96,4 +136,8 @@ export const Ingredients = styled.div`
    
 
    margin-bottom: 48px;
+
+   @media screen and (min-width: ${BREAKPOINTS.DESKTOP}){
+      justify-content: flex-start;
+   }
 `
