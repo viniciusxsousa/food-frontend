@@ -1,17 +1,24 @@
 import { styled } from "styled-components";
 
 export const Container = styled.div`
-    display: ${({ isOpen }) => isOpen ? 'grid' : 'none'};
+    display: grid;
     grid-template-rows: 114px auto 77px;
 
 
     position: absolute;
+    transform: translateX(-100%);
     
-    width: 100%;
     height: 100vh;
+
+    transition: all .5s ease-in;
+
 
     background-color: ${({theme}) => theme.COLORS.DARK_400};
     z-index: 1;
+
+    &[data-is-open='true']{
+        transform: translateX(0%);
+    }
 `
 
 export const Header = styled.div`

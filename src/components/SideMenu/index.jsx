@@ -14,7 +14,7 @@ export function SideMenu({ isOpen, closeMenu, searchTerm }) {
     const navigate = useNavigate();
 
     return (
-        <Container isOpen={isOpen}>
+        <Container data-is-open={isOpen}>
             <Header>
 
                 <button onClick={() => { closeMenu() }} >
