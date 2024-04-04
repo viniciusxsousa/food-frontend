@@ -4,6 +4,7 @@ import { Home } from '../pages/Home';
 import { Dished } from '../pages/Dished';
 import { Update } from '../pages/Update';
 import { New } from '../pages/New';
+import { NotFound } from '../pages/NotFound';
 
 export function AdminRoutes() {
     return (
@@ -12,6 +13,8 @@ export function AdminRoutes() {
             <Route path='/dished/:id' element={<Dished/>} />
             <Route path='/update/:id' element={<Update/>} />
             <Route path='/new' element={<New/>} />
+
+            <Route path='*' element={<NotFound/>}/>
         </Routes>
     )
 }
