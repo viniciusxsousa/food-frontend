@@ -35,7 +35,7 @@ export const Header = styled.div`
 `
 
 export const Content = styled.div`
-    width: 100%;
+    min-width: 100%;
     padding: 36px 28px;
 
     > ul {
