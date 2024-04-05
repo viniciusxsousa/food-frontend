@@ -24,6 +24,7 @@ export function Update() {
     const [ingredients, setIngredients] = useState();
     const [price, setPrice] = useState();
     const [description, setDescription] = useState();
+    const [photoDished, setPhotoDished] = useState();
 
     const [categories, setCategories] = useState();
 
@@ -107,6 +108,27 @@ export function Update() {
         setMenuOpen(!menuOpen);
     }
 
+    async function handleChangePhoto(e) {
+        const file = e.target.files[0];
+        setPhotoDished(file);
+
+        const fileUploadForm = new FormData();
+        fileUploadForm.append("photo", file);
+
+        try {
+            await api.patch(`dishes/photo/${params.id}`, fileUploadForm);
+            alert('Imagem do prato atualizada.');
+
+        } catch (error) {
+            if(error.response) {
+                alert(error.response.data.message);
+            } else {
+                alert('Não foi possível alterar a imagem do prato. Por favor, tente mais tarde');
+            }
+        }
+
+    }
+
     useEffect(() => {
 
         async function searchDished() {
@@ -146,7 +168,7 @@ export function Update() {
 
                         <div>
                             <label>Imagem do prato
-                                 <Input icon={MdFileUpload} type='file'/>
+                                 <Input icon={MdFileUpload} type='file' onChange={handleChangePhoto}/>
                             </label>
                         </div>
 
