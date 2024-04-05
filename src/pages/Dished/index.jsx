@@ -26,6 +26,8 @@ export function Dished() {
     const navigate = useNavigate();
     const { user } = useAuth();
 
+    const pictureUrl = dished ? `http://localhost:3333/files/${dished.picture}` : mask;
+
     function handleUpdate() {
         navigate(`/update/${params.id}`)
     }
@@ -73,7 +75,7 @@ export function Dished() {
                     <div>
                         <Back to='/'><IoIosArrowBack/> Voltar</Back>
 
-                        <img src={mask} alt="Foto do prato" />
+                        <img src={pictureUrl} alt="Foto do prato" />
                     </div>
 
                     <div>
