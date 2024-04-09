@@ -13,6 +13,8 @@ import mask from '../../assets/mask.png'
 export function CardDished({ dished }) {
     const { user } = useAuth();
 
+    const image = dished.picture ? `http://localhost:3333/files/${dished.picture}` : mask
+
     const navigate = useNavigate();
 
     function handleUpdate() {
@@ -26,7 +28,7 @@ export function CardDished({ dished }) {
                 {user.rule === 'user' ? <FaRegHeart/> : <FaPen onClick={handleUpdate}/>}
             </button>
 
-            <img src={mask} alt="Imagem do prato" />
+            <img src={image} alt="Imagem do prato" />
 
             <Dished to={`dished/${dished.id}`}>{dished.name} {'>'}</Dished>
 
