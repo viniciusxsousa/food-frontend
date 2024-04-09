@@ -69,6 +69,7 @@ export function New() {
             }
             
             alert('Prato cadastrado com sucesso.');
+            navigate('/');
 
         }catch(error) {
             if(error.response) {
