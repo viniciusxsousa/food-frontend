@@ -36,6 +36,8 @@ export const Container = styled.article`
         height: 88px;
 
         margin-top: -30px;
+
+        border-radius: 50%;
     }
 
     > div {
