@@ -25,6 +25,7 @@ export function New() {
     const [ingredients, setIngredients] = useState([]);
     const [price, setPrice] = useState();
     const [description, setDescription] = useState();
+    const [photo, setPhoto] = useState();
 
     const [ingredient, setIngredient] = useState();
 
@@ -46,14 +47,27 @@ export function New() {
         
         try{
             
-            await api.post('dishes', {
+            const response = await api.post('dishes', {
                 name,
                 description,
                 category,
                 price,
                 ingredients
             })
+        
+            const dished_id = response.data.id;
+            
+            if(photo) {
+                const fileUploadForm = new FormData();
+                fileUploadForm.append('photo', photo);
 
+                try {
+                    await api.patch(`dishes/photo/${dished_id}`, fileUploadForm);
+                } catch(error) {
+                    alert('Falha ao adicionar a imagem do prato.');
+                }
+            }
+            
             alert('Prato cadastrado com sucesso.');
 
         }catch(error) {
@@ -63,6 +77,11 @@ export function New() {
                 alert('Serviço indisponível. Por favor tente mais tarde.')
             }
         }
+    }
+
+    function handleChangePhoto(e) {
+        const file = e.target.files[0];
+        setPhoto(file);
     }
 
     function handleOpenMenu() {
@@ -111,7 +130,7 @@ export function New() {
 
                         <div>
                             <label>Imagem do prato
-                                <Input icon={MdFileUpload} id='image' type='file'/>
+                                <Input icon={MdFileUpload} id='image' type='file' onChange={handleChangePhoto}/>
                             </label>
                         </div>
 
