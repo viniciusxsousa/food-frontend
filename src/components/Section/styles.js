@@ -12,12 +12,12 @@ export const Container = styled.div`
         margin-bottom: 18px;
     }
 
-    > div {
+/*     > div {
         display: flex;
         gap: 16px;
         
         overflow: hidden;
-    }
+    } */
 
     @media screen and (min-width: ${BREAKPOINTS.DESKTOP}) {
         padding: 0;

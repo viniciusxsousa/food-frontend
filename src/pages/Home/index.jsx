@@ -1,6 +1,10 @@
+import '@splidejs/react-splide/css';
+
 import { useState, useEffect } from "react"
 
 import { api } from "../../services/api"
+
+import { Splide, SplideSlide } from '@splidejs/react-splide';
 
 import { Header } from "../../components/Header"
 import { Footer } from "../../components/Footer"
@@ -31,8 +35,8 @@ export function Home() {
 
                 setCategories(response.data);
 
-            } catch(error) {
-                if(error.response) {
+            } catch (error) {
+                if (error.response) {
                     alert(error.response.data.message);
                 } else {
                     alert('Serviço indisponível.');
@@ -48,8 +52,8 @@ export function Home() {
 
                 setDishes(response.data);
 
-            } catch(error) {
-                if(error.response) {
+            } catch (error) {
+                if (error.response) {
                     alert(error.response.data.message)
                 } else {
                     alert('Serviço indisponível.');
@@ -65,12 +69,12 @@ export function Home() {
 
     return (
         <Container>
-            <Header openMenu={handleOpenMenu}/>
+            <Header openMenu={handleOpenMenu} />
 
-            <SideMenu isOpen={menuOpen} closeMenu={handleOpenMenu} searchTerm={setSearchTerm}/>
+            <SideMenu isOpen={menuOpen} closeMenu={handleOpenMenu} searchTerm={setSearchTerm} />
 
             <Content>
-                
+
                 <div>
 
                     <Flavors>
@@ -80,21 +84,31 @@ export function Home() {
                     </Flavors>
 
                     {
-                        categories && categories.map( category => 
+                        categories && categories.map(category =>
                         (<Section key={category.id} title={category.name}>
-                            {
-                                dishes.map( dished => 
-                                    dished.category === category.id && <CardDished dished={dished}/> 
-                                )
-                            }
-                        </Section> ))
+                            <Splide options={{
+                            type: 'loop',
+                            autoWidth: true,
+                            gap: '2rem',   
+                        }}>
+                                {
+                                    dishes.map(dished =>
+                                        dished.category === category.id && (
+                                            <SplideSlide>
+                                                <CardDished dished={dished} />
+                                            </SplideSlide>
+                                        )
+                                    )
+                                }
+                            </Splide>
+                        </Section>))
                     }
 
 
                 </div>
 
-                <Footer/>
-            </Content>                  
+                <Footer />
+            </Content>
         </Container>
     )
 }
