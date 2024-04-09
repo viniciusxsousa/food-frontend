@@ -45,6 +45,8 @@ export const Content = styled.div`
      width: 244px;
      height: 244px;
      margin: 16px 0;
+
+     border-radius: 50%;
    }
 
    > div div h2 {
