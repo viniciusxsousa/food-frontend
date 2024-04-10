@@ -92,7 +92,7 @@ export function Home() {
                             gap: '2rem',   
                         }}>
                                 {
-                                    dishes.map(dished =>
+                                    dishes && dishes.map(dished =>
                                         dished.category === category.id && (
                                             <SplideSlide>
                                                 <CardDished dished={dished} />
