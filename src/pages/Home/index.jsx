@@ -90,11 +90,11 @@ export function Home() {
                             type: 'loop',
                             autoWidth: true,
                             gap: '2rem',   
-                        }}>
+                            }}>
                                 {
                                     dishes && dishes.map(dished =>
                                         dished.category === category.id && (
-                                            <SplideSlide>
+                                            <SplideSlide key={dished.id} >
                                                 <CardDished dished={dished} />
                                             </SplideSlide>
                                         )
