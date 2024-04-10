@@ -14,7 +14,7 @@ export const Container = styled.div`
 
 
     background-color: ${({theme}) => theme.COLORS.DARK_400};
-    z-index: 1;
+    z-index: 10;
 
     &[data-is-open='true']{
         transform: translateX(0%);
