@@ -8,7 +8,7 @@ export function InputIngredient({isNew, onClick, value, ...rest}) {
             <input 
                 type='text'
                 value={value}
-                readonly={!isNew}
+                readOnly={!isNew}
                 {...rest}
             />
 
