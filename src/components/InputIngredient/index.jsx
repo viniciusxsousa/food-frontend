@@ -3,8 +3,10 @@ import { Container } from "./styles";
 import { GoPlus, GoX } from "react-icons/go";
 
 export function InputIngredient({isnew, onClick, value, ...rest}) {
+   let stringIsNew = isnew ? 'true' : 'false';
+
     return(
-        <Container isnew={isnew} >
+        <Container isnew={stringIsNew} >
 
             <input 
                 type='text'
