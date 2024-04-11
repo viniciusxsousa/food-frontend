@@ -69,7 +69,7 @@ export function Home() {
 
     return (
         <Container>
-            <Header openMenu={handleOpenMenu} />
+            <Header openMenu={handleOpenMenu} searchTerm={setSearchTerm}/>
 
             <SideMenu isOpen={menuOpen} closeMenu={handleOpenMenu} searchTerm={setSearchTerm} />
 

@@ -10,7 +10,7 @@ import { Search } from '../Search'
 
 import logo from '../../assets/logo.svg'
 
-export function Header({ openMenu }) {
+export function Header({ openMenu, searchTerm }) {
 
     const { user, logout } = useAuth();
     const navigate = useNavigate();
@@ -27,7 +27,7 @@ export function Header({ openMenu }) {
                 { user.rule === 'admin' && <span>admin</span> }
             </Logo>
 
-            <Search type='text' placeholder='Pesquise por pratos' />
+            <Search type='text' placeholder='Pesquise por pratos' searchTerm={searchTerm}/>
             
             <div>
                 {
