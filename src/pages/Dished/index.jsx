@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
-import { Container, Content, Buttons, Ingredients, Back } from "./styles";
+import { Container, Content, Buttons, Ingredients } from "./styles";
 
 import { Ingredient} from '../../components/Ingredient'
 import { Header } from '../../components/Header'
@@ -30,6 +30,10 @@ export function Dished() {
 
     function handleUpdate() {
         navigate(`/update/${params.id}`)
+    }
+
+    function handleBack() {
+        navigate('/')
     }
 
     function handleOpenMenu() {
@@ -73,7 +77,7 @@ export function Dished() {
                 <div>
 
                     <div>
-                        <Back to='/'><IoIosArrowBack/> Voltar</Back>
+                        <p onClick={handleBack} ><IoIosArrowBack/> Voltar</p>
 
                         <img src={pictureUrl} alt="Foto do prato" />
                     </div>

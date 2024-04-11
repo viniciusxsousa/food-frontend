@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 
-import { Link } from 'react-router-dom';
-
 import { BREAKPOINTS } from '../../styles/breakpoints';
 
 export const Container = styled.div`
@@ -24,10 +22,21 @@ export const Content = styled.div`
       flex-direction: column;
       align-items: center;
 
-      a { 
-         align-self: start;
+      div p:nth-child(1){
+         align-self: flex-start;
+
+         cursor: pointer;
+
          font-size: 2.4rem;
          margin-top: 20px;
+
+         display: flex;
+         align-items: center;
+         gap: 2px;
+
+         svg {
+         font-size: 30px;
+         }
       }
    }
 
@@ -70,13 +79,14 @@ export const Content = styled.div`
    }
 
    @media screen and (min-width: ${BREAKPOINTS.DESKTOP}) {
+      padding: 16px 123px 33px;
       
       > div {
          flex-direction: row;
 
          div:nth-child(1) {
 
-            a {
+            p {
                margin-left: 7rem;
             }
 
@@ -108,16 +118,6 @@ export const Content = styled.div`
       }
 
    }
-`
-
-export const Back = styled(Link)`
-     display: flex;
-     align-items: center;
-     gap: 2px;
-
-     svg {
-        font-size: 30px;
-     }
 `
 
 export const Buttons = styled.div`
