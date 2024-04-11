@@ -8,12 +8,12 @@ import { Button } from "../Button";
 import { useAuth } from "../../hooks/auth"; 
 import { useNavigate } from "react-router-dom";
 
-import mask from '../../assets/mask.png'
+import noPhoto from '../../assets/Sem-foto.jpg'
 
 export function CardDished({ dished }) {
     const { user } = useAuth();
 
-    const image = dished.picture ? `http://localhost:3333/files/${dished.picture}` : mask
+    const image = dished.picture ? `http://localhost:3333/files/${dished.picture}` : noPhoto
 
     const navigate = useNavigate();
 

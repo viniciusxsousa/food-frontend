@@ -11,7 +11,7 @@ import { Footer } from "../../components/Footer";
 
 import { IoIosRemove, IoIosAdd, IoIosArrowBack } from "react-icons/io";
 
-import mask from '../../assets/mask.png'
+import noPhoto from '../../assets/Sem-foto.jpg'
 import { api } from "../../services/api";
 import { useAuth } from "../../hooks/auth";
 
@@ -26,7 +26,7 @@ export function Dished() {
     const navigate = useNavigate();
     const { user } = useAuth();
 
-    const pictureUrl = dished.picture ? `http://localhost:3333/files/${dished.picture}` : mask;
+    const pictureUrl = dished.picture ? `http://localhost:3333/files/${dished.picture}` : noPhoto;
 
     function handleUpdate() {
         navigate(`/update/${params.id}`)
