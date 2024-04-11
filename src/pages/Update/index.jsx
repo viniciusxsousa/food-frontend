@@ -205,7 +205,7 @@ export function Update() {
                                         />)
                                 }
                                 <InputIngredient 
-                                    isNew 
+                                    isnew 
                                     placeholder='Adicionar'
                                     value={newIngredient}
                                     onChange={e => setNewIngredient(e.target.value)}
