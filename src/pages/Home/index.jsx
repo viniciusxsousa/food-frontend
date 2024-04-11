@@ -1,6 +1,7 @@
 import '@splidejs/react-splide/css';
 
 import { useState, useEffect } from "react"
+import { useAuth } from '../../hooks/auth';
 
 import { api } from "../../services/api"
 
@@ -22,6 +23,8 @@ export function Home() {
     const [menuOpen, setMenuOpen] = useState(false);
     const [searchTerm, setSearchTerm] = useState('');
 
+    const { logout } = useAuth();
+
     function handleOpenMenu() {
         setMenuOpen(!menuOpen);
     }
@@ -38,6 +41,10 @@ export function Home() {
             } catch (error) {
                 if (error.response) {
                     alert(error.response.data.message);
+
+                    if(error.response.status == 401) {
+                        logout();
+                    }
                 } else {
                     alert('Serviço indisponível.');
                 }
@@ -54,7 +61,13 @@ export function Home() {
 
             } catch (error) {
                 if (error.response) {
-                    alert(error.response.data.message)
+                    alert(error.response.data.message);
+
+
+                    if(error.response.status == 401) {
+                        logout();
+                    }
+
                 } else {
                     alert('Serviço indisponível.');
                 }
