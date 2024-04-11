@@ -28,6 +28,8 @@ export const Content = styled.div`
         > p {
             display: flex;
 
+            cursor: pointer;
+
             font-size: 16px;
             color: ${({theme}) => theme.COLORS.LIGHT_300};
 
