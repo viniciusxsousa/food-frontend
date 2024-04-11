@@ -11,8 +11,8 @@ export const Container = styled.article`
     padding: 24px;
 
     background-color: ${({theme}) => theme.COLORS.DARK_200};
-
-    border: 1px solid ${({theme}) => theme.COLORS.DARK_300};
+/* 
+    border: 1px solid ${({theme}) => theme.COLORS.DARK_300}; */
 
     display: flex;
     flex-direction: column;
