@@ -26,7 +26,7 @@ export function Dished() {
     const navigate = useNavigate();
     const { user } = useAuth();
 
-    const pictureUrl = dished ? `http://localhost:3333/files/${dished.picture}` : mask;
+    const pictureUrl = dished.picture ? `http://localhost:3333/files/${dished.picture}` : mask;
 
     function handleUpdate() {
         navigate(`/update/${params.id}`)
@@ -48,6 +48,7 @@ export function Dished() {
                 const response = await api.get(`dishes/${params.id}`);
 
                 setDished(response.data.dished);
+                console.log(response.data.dished);
                 setIngredients(response.data.ingredients);
 
             } catch (error) {
