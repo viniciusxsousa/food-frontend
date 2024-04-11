@@ -169,7 +169,7 @@ export function New() {
                                     />    
                                 )}
                                 <InputIngredient 
-                                    isNew 
+                                    isnew
                                     value={ingredient}
                                     placeholder='Adicionar'
                                     onChange={ e => setIngredient(e.target.value) } 

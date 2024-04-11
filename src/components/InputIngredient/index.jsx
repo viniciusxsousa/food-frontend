@@ -2,17 +2,18 @@ import { Container } from "./styles";
 
 import { GoPlus, GoX } from "react-icons/go";
 
-export function InputIngredient({isNew, onClick, value, ...rest}) {
+export function InputIngredient({isnew, onClick, value, ...rest}) {
     return(
-        <Container isNew={isNew} >
+        <Container isnew={isnew} >
+
             <input 
                 type='text'
                 value={value}
-                readOnly={!isNew}
+                readOnly={!isnew}
                 {...rest}
             />
 
-            {isNew ? <GoPlus onClick={onClick} /> : <GoX onClick={onClick} />}
+            {isnew ? <GoPlus onClick={onClick} /> : <GoX onClick={onClick} />}
         </Container>
     )
 }
