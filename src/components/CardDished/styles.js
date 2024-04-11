@@ -1,6 +1,4 @@
-import styled from 'styled-components';
-
-import { Link } from 'react-router-dom';  
+import styled from 'styled-components';  
 
 import { BREAKPOINTS } from '../../styles/breakpoints'
 
@@ -39,6 +37,17 @@ export const Container = styled.article`
         border-radius: 50%;
     }
 
+    p {
+        font-size: 1.4rem;
+        font-weight: 500;
+
+        cursor: pointer;
+
+        @media screen and (min-width: ${BREAKPOINTS.DESKTOP}) {
+        font-size: 2.4rem;
+        }
+    }
+
     > div {
         display: flex;
         gap: 18px;
@@ -52,15 +61,6 @@ export const Container = styled.article`
             width: 176px;
             height: 176px;
         }
-    }
-`
-
-export const Dished = styled(Link)`
-    font-size: 1.4rem;
-    font-weight: 500;
-
-    @media screen and (min-width: ${BREAKPOINTS.DESKTOP}) {
-        font-size: 2.4rem;
     }
 `
 

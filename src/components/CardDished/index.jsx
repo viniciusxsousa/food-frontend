@@ -1,4 +1,4 @@
-import { Container, Price, Buttons, Dished } from "./styles";
+import { Container, Price, Buttons } from "./styles";
 
 import { FaRegHeart, FaPen } from "react-icons/fa";
 import { IoIosRemove, IoIosAdd } from "react-icons/io";
@@ -30,7 +30,7 @@ export function CardDished({ dished }) {
 
             <img src={image} alt="Imagem do prato" />
 
-            <Dished to={`dished/${dished.id}`}>{dished.name} {'>'}</Dished>
+            <p onClick={() => navigate(`/dished/${dished.id}`)}>{dished.name} {'>'}</p>
 
             <Price>R$ {dished.price}</Price>
 

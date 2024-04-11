@@ -19,6 +19,7 @@ import { useAuth } from "../../hooks/auth";
 export function Dished() {
     const [dished, setDished] = useState();
     const [ingredients, setIngredients] = useState();
+    const [dishedPicture, setDishedPicture] = useState();
 
     const [menuOpen, setMenuOpen] = useState(false);
 
@@ -26,7 +27,7 @@ export function Dished() {
     const navigate = useNavigate();
     const { user } = useAuth();
 
-    const pictureUrl = dished.picture ? `http://localhost:3333/files/${dished.picture}` : noPhoto;
+    const pictureUrl = dishedPicture ? `http://localhost:3333/files/${dished.picture}` : noPhoto;
 
     function handleUpdate() {
         navigate(`/update/${params.id}`)
@@ -48,7 +49,7 @@ export function Dished() {
                 const response = await api.get(`dishes/${params.id}`);
 
                 setDished(response.data.dished);
-                console.log(response.data.dished);
+                setDishedPicture(response.data.dished.picture);
                 setIngredients(response.data.ingredients);
 
             } catch (error) {
