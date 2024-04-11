@@ -21,6 +21,10 @@ export function CardDished({ dished }) {
         navigate(`/update/${dished.id}`);
     }
 
+    function handleDetails() {
+        navigate(`/dished/${dished.id}`)
+    }
+
 
     return(
         <Container>
@@ -30,7 +34,7 @@ export function CardDished({ dished }) {
 
             <img src={image} alt="Imagem do prato" />
 
-            <p onClick={() => navigate(`/dished/${dished.id}`)}>{dished.name} {'>'}</p>
+            <p onClick={handleDetails}>{dished.name} {'>'}</p>
 
             <Price>R$ {dished.price}</Price>
 
