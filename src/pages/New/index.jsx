@@ -24,7 +24,7 @@ export function New() {
     const [category, setCategory] = useState(1);
     const [ingredients, setIngredients] = useState([]);
     const [price, setPrice] = useState();
-    const [description, setDescription] = useState();
+    const [description, setDescription] = useState('Fale brevemente sobre o prato, seus ingredientes e composição');
     const [photo, setPhoto] = useState();
 
     const [ingredient, setIngredient] = useState();
