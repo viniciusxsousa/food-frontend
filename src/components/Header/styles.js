@@ -32,6 +32,10 @@ export const Container = styled.header`
         padding: 24px 123px 24px;
         gap: 32px;
 
+        > div:nth-child(2) {
+            margin: 0;
+        }
+
         > div:nth-child(3) {
             display: flex;
             justify-content: center;
