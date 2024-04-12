@@ -86,6 +86,8 @@ export const Content = styled.div`
 
         @media screen and (min-width: ${BREAKPOINTS.DESKTOP}) {
             padding: 40px 123px;
+            max-width: 1400px;
+            margin: auto;
 
             h2 {
                 font-size: 3.2rem;
