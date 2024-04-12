@@ -102,6 +102,7 @@ export function Home() {
                             <Splide options={{
                             type: 'slide',
                             autoWidth: true,
+                            pagination: false,
                             gap: '2rem',  
                             clones: 0,
                             start  : 0,
