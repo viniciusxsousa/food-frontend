@@ -193,7 +193,7 @@ export function New() {
                             <label htmlFor="description">Descrição</label>
                             
                             <TextArea
-                                value='Fale brevemente sobre o prato, seus ingredientes e composição'
+                                value={description}
                                 onChange={ e => setDescription(e.target.value) }
                             >   
                             </TextArea>
