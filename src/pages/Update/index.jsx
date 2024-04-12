@@ -80,6 +80,7 @@ export function Update() {
 
             await api.put(`/dishes/${params.id}`, {name, description, category: dishedCategory, price});
             alert('Prato atualizado com sucesso!');
+            navigate('/');
 
         } catch(error) {
             if(error.response) {
@@ -87,8 +88,7 @@ export function Update() {
             } else {
                 alert('Não foi possível concluir. Por favor tente mais tarde.');
             }
-        }
-
+        }        
     }
 
     async function handleDeleteDished(e) {
