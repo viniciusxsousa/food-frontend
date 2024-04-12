@@ -100,9 +100,11 @@ export function Home() {
                         categories && categories.map(category =>
                         (<Section key={category.id} title={category.name}>
                             <Splide options={{
-                            type: 'loop',
+                            type: 'slide',
                             autoWidth: true,
-                            gap: '2rem',   
+                            gap: '2rem',  
+                            clones: 0,
+                            start  : 0,
                             }}>
                                 {
                                     dishes && dishes.map(dished =>
