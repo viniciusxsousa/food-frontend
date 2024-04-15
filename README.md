@@ -16,6 +16,8 @@ Senha: 123
 
 * https://food-proj.netlify.app/
 
+Como foi utilizado a versão gratuita do render a aplicação leva em média 5 minutos para concluir a primeira requisição. Após isso o sistema fica normal novamente. 
+
 ### :atom_symbol: Tecnologias 
 * [Axios](https://axios-http.com/ptbr/docs/intro)
 * [Splide](https://splidejs.com/)
