@@ -13,7 +13,7 @@ import noPhoto from '../../assets/Sem-foto.jpg'
 export function CardDished({ dished }) {
     const { user } = useAuth();
 
-    const image = dished.picture ? `http://localhost:3333/files/${dished.picture}` : noPhoto
+    const image = dished.picture ? `https://food-backend-ojx8.onrender.com/files/${dished.picture}` : noPhoto
 
     const navigate = useNavigate();
 

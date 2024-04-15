@@ -27,7 +27,7 @@ export function Dished() {
     const navigate = useNavigate();
     const { user } = useAuth();
 
-    const pictureUrl = dishedPicture ? `http://localhost:3333/files/${dished.picture}` : noPhoto;
+    const pictureUrl = dishedPicture ? `https://food-backend-ojx8.onrender.com/files/${dished.picture}` : noPhoto;
 
     function handleUpdate() {
         navigate(`/update/${params.id}`)
